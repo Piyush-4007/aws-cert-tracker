@@ -1,0 +1,218 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme inline {
+  --color-canvas: var(--canvas);
+  --color-surface: var(--surface);
+  --color-raised: var(--raised);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-faint: var(--faint);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-warn: var(--warn);
+  --color-warn-soft: var(--warn-soft);
+  --font-sans: var(--sans);
+  --font-serif: var(--serif);
+  --font-mono: var(--mono);
+}
+
+:root {
+  --sans: var(--font-geist-sans), "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+  --serif: var(--font-newsreader), "Lyon Text", Georgia, serif;
+  --mono: var(--font-geist-mono), "SF Mono", ui-monospace, monospace;
+
+  --canvas: #fbfbfa;
+  --surface: #ffffff;
+  --raised: #f7f6f3;
+  --ink: #1a1a18;
+  --muted: #6f6d68;
+  --faint: #9a978f;
+  --line: #e7e6e2;
+  --line-strong: #d7d5cf;
+  --accent: #1f6c9f;
+  --accent-soft: #e6f0f8;
+  --warn: #9f2f2d;
+  --warn-soft: #fbeceb;
+  --bar: #2f2e2a;
+  --bar-track: #e7e6e2;
+}
+
+.dark {
+  --canvas: #121210;
+  --surface: #191917;
+  --raised: #1f1e1c;
+  --ink: #ecebe6;
+  --muted: #918d85;
+  --faint: #6d6a63;
+  --line: #2a2926;
+  --line-strong: #3a3835;
+  --accent: #7fb6de;
+  --accent-soft: #17262f;
+  --warn: #e08a86;
+  --warn-soft: #2c1c1b;
+  --bar: #c9c6bd;
+  --bar-track: #2a2926;
+}
+
+html {
+  color-scheme: light;
+  -webkit-text-size-adjust: 100%;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+body {
+  background: var(--canvas);
+  color: var(--ink);
+  font-family: var(--sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-wrap: break-word;
+}
+
+::selection {
+  background: var(--accent-soft);
+  color: var(--ink);
+}
+
+/* One focus treatment everywhere — this thing is meant to be driven by keyboard. */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+.serif {
+  font-family: var(--serif);
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.meta {
+  font-family: var(--mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.rule {
+  border-color: var(--line);
+}
+
+/* Quiet progress bar: a hairline that fills, never a celebration. */
+.bar {
+  position: relative;
+  height: 3px;
+  width: 100%;
+  background: var(--bar-track);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.bar > span {
+  display: block;
+  height: 100%;
+  background: var(--bar);
+  border-radius: 2px;
+  transition: width 420ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bar[data-tone="accent"] > span {
+  background: var(--accent);
+}
+
+.bar[data-tone="faint"] > span {
+  background: var(--faint);
+}
+
+/* Checkbox — square, hairline, ink fill. No colour party. */
+.check {
+  appearance: none;
+  flex: none;
+  width: 15px;
+  height: 15px;
+  margin-top: 0.34em;
+  border: 1px solid var(--line-strong);
+  border-radius: 3px;
+  background: var(--surface);
+  cursor: pointer;
+  transition: background 140ms ease, border-color 140ms ease;
+}
+
+.check:hover {
+  border-color: var(--ink);
+}
+
+.check:checked {
+  background: var(--ink);
+  border-color: var(--ink);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23fbfbfa' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3.5 8.5l3 3 6-7'/%3E%3C/svg%3E");
+  background-size: 13px 13px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.dark .check:checked {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23121210' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3.5 8.5l3 3 6-7'/%3E%3C/svg%3E");
+}
+
+kbd {
+  font-family: var(--mono);
+  font-size: 0.6875rem;
+  border: 1px solid var(--line);
+  border-bottom-width: 2px;
+  border-radius: 4px;
+  background: var(--raised);
+  padding: 0.1em 0.4em;
+  color: var(--muted);
+}
+
+mark {
+  background: var(--accent-soft);
+  color: inherit;
+  border-radius: 2px;
+  padding: 0 0.12em;
+}
+
+/* Scroll-entry, used sparingly on top-level blocks. */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.rise {
+  animation: rise 520ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: calc(var(--i, 0) * 60ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Touch targets stay comfortable on a phone without bloating the desktop layout. */
+@media (max-width: 640px) {
+  .check {
+    width: 18px;
+    height: 18px;
+  }
+}

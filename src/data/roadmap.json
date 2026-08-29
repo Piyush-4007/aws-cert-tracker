@@ -1,0 +1,2850 @@
+{
+  "generatedFrom": "aws-cert-roadmap.md",
+  "title": "AWS Certification Roadmap — Study Checklist",
+  "meta": {
+    "intro": [
+      "Order: **CLF-C02 → AIF-C01 → SAA-C03 → DVA-C02**",
+      "Hard constraint: **all four vouchers expire 29-Jan-2027.** Every exam date must fall before that. Voucher expiry cannot be extended.",
+      "SAA-C03 is the graded one for the Cloud Solutions Architect course (5 marks for attempting, 35 for passing)."
+    ],
+    "scoringNote": "Scoring is compensatory — you don't need to pass each domain individually, only the total. No penalty for guessing, so never leave a question blank.",
+    "verifiedNote": "Exam versions verified current as of 29 Aug 2026: CLF-C02, AIF-C01, SAA-C03, DVA-C02. Re-check the official exam guide before each attempt in case AWS ships a new version.",
+    "voucherExpiry": "2027-01-29"
+  },
+  "certifications": [
+    {
+      "id": "clf-c02",
+      "code": "CLF-C02",
+      "name": "Cloud Practitioner",
+      "order": 1,
+      "intro": [
+        "This is your foundation layer. Everything here gets reused by all three later exams, so learn it properly rather than cramming it."
+      ],
+      "domainSummary": "Cloud Concepts 24% · Security & Compliance 30% · Cloud Technology & Services 34% · Billing, Pricing & Support 12%",
+      "examFacts": {
+        "level": "Foundational",
+        "questions": 65,
+        "scoredQuestions": 50,
+        "timeMinutes": 90,
+        "passScore": 700,
+        "passScoreMax": 1000,
+        "price": 100,
+        "priceLabel": "$100",
+        "retakeWaitDays": 14,
+        "validityYears": 3
+      },
+      "reviseFrom": null,
+      "reviseFromPanels": [],
+      "domains": [
+        {
+          "id": "d1",
+          "number": 1,
+          "title": "Cloud Concepts",
+          "weightPercent": 24,
+          "note": null,
+          "sections": [
+            {
+              "id": "clf-c02.d1.1-1",
+              "number": "1.1",
+              "title": "Value proposition of the AWS Cloud",
+              "implicit": false,
+              "items": [
+                {
+                  "id": "clf-c02.d1.1-1.item-01",
+                  "text": "Benefits: agility, elasticity, scalability, high availability, global reach, economies of scale",
+                  "hash": "a4ef15c95d"
+                },
+                {
+                  "id": "clf-c02.d1.1-1.item-02",
+                  "text": "Cost benefits: CapEx → OpEx, pay-as-you-go, stop guessing capacity",
+                  "hash": "ea5518be76"
+                },
+                {
+                  "id": "clf-c02.d1.1-1.item-03",
+                  "text": "Automation and speed of provisioning as a business benefit",
+                  "hash": "51adbec8a2"
+                }
+              ]
+            },
+            {
+              "id": "clf-c02.d1.1-2",
+              "number": "1.2",
+              "title": "AWS Well-Architected Framework",
+              "implicit": false,
+              "items": [
+                {
+                  "id": "clf-c02.d1.1-2.item-01",
+                  "text": "Six pillars: Operational Excellence, Security, Reliability, Performance Efficiency, Cost Optimization, Sustainability",
+                  "hash": "f4d927f5be"
+                },
+                {
+                  "id": "clf-c02.d1.1-2.item-02",
+                  "text": "Core design principles: design for failure, decouple components, implement elasticity, think parallel",
+                  "hash": "aecc233438"
+                },
+                {
+                  "id": "clf-c02.d1.1-2.item-03",
+                  "text": "AWS Well-Architected Tool (what it does)",
+                  "hash": "dbcb956dd7"
+                }
+              ]
+            },
+            {
+              "id": "clf-c02.d1.1-3",
+              "number": "1.3",
+              "title": "Cloud migration and the CAF",
+              "implicit": false,
+              "items": [
+                {
+                  "id": "clf-c02.d1.1-3.item-01",
+                  "text": "AWS Cloud Adoption Framework (CAF) — six perspectives: Business, People, Governance, Platform, Security, Operations",
+                  "hash": "3aaf5ae0a7"
+                },
+                {
+                  "id": "clf-c02.d1.1-3.item-02",
+                  "text": "The 7 Rs of migration: Rehost, Replatform, Refactor, Repurchase, Retire, Retain, Relocate",
+                  "hash": "9062cb3f41"
+                },
+                {
+                  "id": "clf-c02.d1.1-3.item-03",
+                  "text": "AWS Snow Family for data migration (Snowcone, Snowball Edge, Snowmobile)",
+                  "hash": "9b96b3fba8"
+                },
+                {
+                  "id": "clf-c02.d1.1-3.item-04",
+                  "text": "AWS DataSync, AWS Transfer Family, AWS Migration Hub, AWS Application Migration Service",
+                  "hash": "9aa93a9575"
+                }
+              ]
+            },
+            {
+              "id": "clf-c02.d1.1-4",
+              "number": "1.4",
+              "title": "Cloud economics",
+              "implicit": false,
+              "items": [
+                {
+                  "id": "clf-c02.d1.1-4.item-01",
+                  "text": "Fixed vs variable cost",
+                  "hash": "c4d3ae6caf"
+                },
+                {
+                  "id": "clf-c02.d1.1-4.item-02",
+                  "text": "Licensing strategies: BYOL vs included licences",
+                  "hash": "d04558c88f"
+                },
+                {
+                  "id": "clf-c02.d1.1-4.item-03",
+                  "text": "Right-sizing concept",
+                  "hash": "10754be50e"
+                },
+                {
+                  "id": "clf-c02.d1.1-4.item-04",
+                  "text": "Managed services reducing operational overhead (TCO argument)",
+                  "hash": "f806e7356c"
+                }
+              ]
+            },
+            {
+              "id": "clf-c02.d1.1-5",
+              "number": "1.5",
+              "title": "Deployment and connectivity models",
+              "implicit": false,
+              "items": [
+                {
+                  "id": "clf-c02.d1.1-5.item-01",
+                  "text": "Cloud, hybrid, on-premises deployment models",
+                  "hash": "3ea34d28cc"
+                },
+                {
+                  "id": "clf-c02.d1.1-5.item-02",
+                  "text": "Connectivity options: VPN, AWS Direct Connect, public internet",
+                  "hash": "cb22166953"
+                },
+                {
+                  "id": "clf-c02.d1.1-5.item-03",
+                  "text": "AWS Outposts, AWS Local Zones, AWS Wavelength",
+                  "hash": "ad27942841"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "d2",
+          "number": 2,
+          "title": "Security and Compliance",
+          "weightPercent": 30,
+          "note": null,
+          "sections": [
+            {
+              "id": "clf-c02.d2.2-1",
+              "number": "2.1",
+              "title": "Shared Responsibility Model",
+              "implicit": false,
+              "items": [
+                {
+                  "id": "clf-c02.d2.2-1.item-01",
+                  "text": "Security **of** the cloud vs security **in** the cloud",
+                  "hash": "0845327d1b"
+                },
+                {
+                  "id": "clf-c02.d2.2-1.item-02",
+                  "text": "How responsibility shifts across EC2 vs RDS vs Lambda vs S3",
+                  "hash": "6db0864e97"
+                },
+                {
+                  "id": "clf-c02.d2.2-1.item-03",
+                  "text": "Patching responsibility by service type",
+                  "hash": "f1634c9805"
+                }
+              ]
+            },
+            {
+              "id": "clf-c02.d2.2-2",
+              "number": "2.2",
+              "title": "Compliance and governance",
+              "implicit": false,
+              "items": [
+                {
+                  "id": "clf-c02.d2.2-2.item-01",
+                  "text": "AWS Artifact — on-demand compliance reports",
+                  "hash": "109f3317f5"
+                },
+                {
+                  "id": "clf-c02.d2.2-2.item-02",
+                  "text": "AWS Compliance programs (SOC, PCI DSS, ISO, HIPAA, GDPR at awareness level)",
+                  "hash": "628f757a58"
+                },
+                {
+                  "id": "clf-c02.d2.2-2.item-03",
+                  "text": "Data residency and geographic compliance",
+                  "hash": "2a77d8d21e"
+                },
+                {
+                  "id": "clf-c02.d2.2-2.item-04",
+                  "text": "AWS Config — resource configuration recording and compliance rules",
+                  "hash": "6d6c4c8e98"
+                },
+                {
+                  "id": "clf-c02.d2.2-2.item-05",
+                  "text": "AWS Audit Manager",
+                  "hash": "8fb9ae0e14"
+                },
+                {
+                  "id": "clf-c02.d2.2-2.item-06",
+                  "text": "AWS CloudTrail — API activity logging and auditing",
+                  "hash": "8c49b311f7"
+                },
+                {
+                  "id": "clf-c02.d2.2-2.item-07",
+                  "text": "Amazon GuardDuty — threat detection",
+                  "hash": "93b16d3476"
+                },
+                {
+                  "id": "clf-c02.d2.2-2.item-08",
+                  "text": "Amazon Inspector — vulnerability scanning",
+                  "hash": "f97b82d1f3"
+                },
+                {
+                  "id": "clf-c02.d2.2-2.item-09",
+                  "text": "AWS Security Hub — aggregated security posture",
+                  "hash": "312672a8cd"
+                },
+                {
+                  "id": "clf-c02.d2.2-2.item-10",
+                  "text": "Amazon Macie — sensitive data discovery in S3",
+                  "hash": "a6f636151d"
+                },
+                {
+                  "id": "clf-c02.d2.2-2.item-11",
+                  "text": "AWS Trusted Advisor (security pillar checks)",
+                  "hash": "258ab33db9"
+                }
+              ]
+            },
+            {
+              "id": "clf-c02.d2.2-3",
+              "number": "2.3",
+              "title": "Identity and access management",
+              "implicit": false,
+              "items": [
+                {
+                  "id": "clf-c02.d2.2-3.item-01",
+                  "text": "IAM users, groups, roles, policies",
+                  "hash": "98e4054b1e"
+                },
+                {
+                  "id": "clf-c02.d2.2-3.item-02",
+                  "text": "Principle of least privilege",
+                  "hash": "224dbeeaa6"
+                },
+                {
+                  "id": "clf-c02.d2.2-3.item-03",
+                  "text": "Root user — what it is, why to lock it down, MFA on root",
+                  "hash": "8826044c8a"
+                },
+                {
+                  "id": "clf-c02.d2.2-3.item-04",
+                  "text": "MFA types",
+                  "hash": "4ad5ef4f49"
+                },
+                {
+                  "id": "clf-c02.d2.2-3.item-05",
+                  "text": "IAM Identity Center (successor to AWS SSO)",
+                  "hash": "eb740cb416"
+                },
+                {
+                  "id": "clf-c02.d2.2-3.item-06",
+                  "text": "AWS Organizations, Organizational Units (OUs), Service Control Policies (SCPs)",
+                  "hash": "78b2bdeb6e"
+                },
+                {
+                  "id": "clf-c02.d2.2-3.item-07",
+                  "text": "Consolidated billing under Organizations",
+                  "hash": "50ecbe16ca"
+                },
+                {
+                  "id": "clf-c02.d2.2-3.item-08",
+                  "text": "Amazon Cognito (awareness level: user auth for apps)",
+                  "hash": "dea1e7045c"
+                },
+                {
+                  "id": "clf-c02.d2.2-3.item-09",
+                  "text": "AWS Directory Service, AWS RAM (Resource Access Manager)",
+                  "hash": "5c8104e24c"
+                }
+              ]
+            },
+            {
+              "id": "clf-c02.d2.2-4",
+              "number": "2.4",
+              "title": "Security support resources",
+              "implicit": false,
+              "items": [
+                {
+                  "id": "clf-c02.d2.2-4.item-01",
+                  "text": "AWS Knowledge Center, Security Center, Security Blog",
+                  "hash": "cae8132e51"
+                },
+                {
+                  "id": "clf-c02.d2.2-4.item-02",
+                  "text": "AWS Shield (Standard vs Advanced) — DDoS protection",
+                  "hash": "ff9deca9e9"
+                },
+                {
+                  "id": "clf-c02.d2.2-4.item-03",
+                  "text": "AWS WAF — web application firewall",
+                  "hash": "be89478a65"
+                },
+                {
+                  "id": "clf-c02.d2.2-4.item-04",
+                  "text": "AWS KMS — key management, customer managed vs AWS managed keys",
+                  "hash": "b61b838579"
+                },
+                {
+                  "id": "clf-c02.d2.2-4.item-05",
+                  "text": "AWS CloudHSM",
+                  "hash": "94eecf0c56"
+                },
+                {
+                  "id": "clf-c02.d2.2-4.item-06",
+                  "text": "AWS Secrets Manager",
+                  "hash": "8b15aa3171"
+                },
+                {
+                  "id": "clf-c02.d2.2-4.item-07",
+                  "text": "AWS Certificate Manager (ACM)",
+                  "hash": "41a45fed0c"
+                },
+                {
+                  "id": "clf-c02.d2.2-4.item-08",
+                  "text": "Encryption at rest vs encryption in transit",
+                  "hash": "3d6459632c"
+                },
+                {
+                  "id": "clf-c02.d2.2-4.item-09",
+                  "text": "Security groups vs network ACLs (stateful vs stateless)",
+                  "hash": "383f152977"
+                },
+                {
+                  "id": "clf-c02.d2.2-4.item-10",
+                  "text": "AWS Network Firewall",
+                  "hash": "70f1e1d9bf"
+                },
+                {
+                  "id": "clf-c02.d2.2-4.item-11",
+                  "text": "Penetration testing policy (what's allowed without approval)",
+                  "hash": "cb6cf51831"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "d3",
+          "number": 3,
+          "title": "Cloud Technology and Services",
+          "weightPercent": 34,
+          "note": null,
+          "sections": [
+            {
+              "id": "clf-c02.d3.3-1",
+              "number": "3.1",
+              "title": "Methods of deploying and operating",
+              "implicit": false,
+              "items": [
+                {
+                  "id": "clf-c02.d3.3-1.item-01",
+                  "text": "AWS Management Console, AWS CLI, SDKs",
+                  "hash": "8bb1e21ff7"
+                },
+                {
+                  "id": "clf-c02.d3.3-1.item-02",
+                  "text": "Infrastructure as Code concept",
+                  "hash": "5ef3aa6704"
+                },
+                {
+                  "id": "clf-c02.d3.3-1.item-03",
+                  "text": "AWS CloudFormation",
+                  "hash": "35949bf28a"
+                },
+                {
+                  "id": "clf-c02.d3.3-1.item-04",
+                  "text": "Deployment models: one-time, IaC, APIs",
+                  "hash": "3f7ae76fa1"
+                }
+              ]
+            },
+            {
+              "id": "clf-c02.d3.3-2",
+              "number": "3.2",
+              "title": "Global infrastructure",
+              "implicit": false,
+              "items": [
+                {
+                  "id": "clf-c02.d3.3-2.item-01",
+                  "text": "Regions, Availability Zones, Edge Locations",
+                  "hash": "f8e38268e0"
+                },
+                {
+                  "id": "clf-c02.d3.3-2.item-02",
+                  "text": "Why multi-AZ matters (high availability) vs multi-Region (disaster recovery, latency, compliance)",
+                  "hash": "fc2d4839f6"
+                },
+                {
+                  "id": "clf-c02.d3.3-2.item-03",
+                  "text": "How to choose a Region: latency, price, compliance, service availability",
+                  "hash": "6d7004cb15"
+                },
+                {
+                  "id": "clf-c02.d3.3-2.item-04",
+                  "text": "Amazon CloudFront and edge caching",
+                  "hash": "86300dbaba"
+                },
+                {
+                  "id": "clf-c02.d3.3-2.item-05",
+                  "text": "AWS Global Accelerator",
+                  "hash": "006c805b61"
+                }
+              ]
+            },
+            {
+              "id": "clf-c02.d3.3-3",
+              "number": "3.3",
+              "title": "Compute services",
+              "implicit": false,
+              "items": [
+                {
+                  "id": "clf-c02.d3.3-3.item-01",
+                  "text": "Amazon EC2 — instance types and families at a high level",
+                  "hash": "74c7cf3ead"
+                },
+                {
+                  "id": "clf-c02.d3.3-3.item-02",
+                  "text": "EC2 Auto Scaling and Elastic Load Balancing (ALB, NLB, GWLB, CLB)",
+                  "hash": "c6b31ecae1"
+                },
+                {
+                  "id": "clf-c02.d3.3-3.item-03",
+                  "text": "AWS Lambda — serverless, event-driven",
+                  "hash": "79eb8947ad"
+                },
+                {
+                  "id": "clf-c02.d3.3-3.item-04",
+                  "text": "Container services: Amazon ECS, Amazon EKS, AWS Fargate, Amazon ECR",
+                  "hash": "12a4b63ebc"
+                },
+                {
+                  "id": "clf-c02.d3.3-3.item-05",
+                  "text": "AWS Elastic Beanstalk",
+                  "hash": "4ad339871b"
+                },
+                {
+                  "id": "clf-c02.d3.3-3.item-06",
+                  "text": "AWS Batch, AWS Lightsail",
+                  "hash": "09b66eccc9"
+                },
+                {
+                  "id": "clf-c02.d3.3-3.item-07",
+                  "text": "When to pick EC2 vs Lambda vs containers",
+                  "hash": "b9971c7abc"
+                }
+              ]
+            },
+            {
+              "id": "clf-c02.d3.3-4",
+              "number": "3.4",
+              "title": "Database services",
+              "implicit": false,
+              "items": [
+                {
+                  "id": "clf-c02.d3.3-4.item-01",
+                  "text": "Amazon RDS (engines, Multi-AZ, read replicas)",
+                  "hash": "ab8d4e023c"
+                },
+                {
+                  "id": "clf-c02.d3.3-4.item-02",
+                  "text": "Amazon Aurora",
+                  "hash": "6d54ee4766"
+                },
+                {
+                  "id": "clf-c02.d3.3-4.item-03",
+                  "text": "Amazon DynamoDB — NoSQL key-value",
+                  "hash": "aef288e6ba"
+                },
+                {
+                  "id": "clf-c02.d3.3-4.item-04",
+                  "text": "Amazon Redshift — data warehousing",
+                  "hash": "3586c85edc"
+                },
+                {
+                  "id": "clf-c02.d3.3-4.item-05",
+                  "text": "Amazon ElastiCache (Redis, Memcached)",
+                  "hash": "00a573b7bb"
+                },
+                {
+                  "id": "clf-c02.d3.3-4.item-06",
+                  "text": "Amazon DocumentDB, Amazon Neptune, Amazon MemoryDB, Amazon Timestream, Amazon Keyspaces",
+                  "hash": "9353e52c74"
+                },
+                {
+                  "id": "clf-c02.d3.3-4.item-07",
+                  "text": "AWS Database Migration Service (DMS), AWS Schema Conversion Tool",
+                  "hash": "5f78baf2ba"
+                },
+                {
+                  "id": "clf-c02.d3.3-4.item-08",
+                  "text": "Relational vs non-relational — when to use which",
+                  "hash": "752efa42dd"
+                }
+              ]
+            },
+            {
+              "id": "clf-c02.d3.3-5",
+              "number": "3.5",
+              "title": "Network services",
+              "implicit": false,
+              "items": [
+                {
+                  "id": "clf-c02.d3.3-5.item-01",
+                  "text": "Amazon VPC — subnets, route tables, internet gateway, NAT gateway",
+                  "hash": "daff808db1"
+                },
+                {
+                  "id": "clf-c02.d3.3-5.item-02",
+                  "text": "Public vs private subnets",
+                  "hash": "ce6f82f1bc"
+                },
+                {
+                  "id": "clf-c02.d3.3-5.item-03",
+                  "text": "AWS Direct Connect vs Site-to-Site VPN",
+                  "hash": "b176c1dcf7"
+                },
+                {
+                  "id": "clf-c02.d3.3-5.item-04",
+                  "text": "Amazon Route 53 — DNS, routing policies at awareness level",
+                  "hash": "881c724cd6"
+                },
+                {
+                  "id": "clf-c02.d3.3-5.item-05",
+                  "text": "VPC peering, AWS Transit Gateway, VPC endpoints (Gateway vs Interface / PrivateLink)",
+                  "hash": "c371c6694d"
+                }
+              ]
+            },
+            {
+              "id": "clf-c02.d3.3-6",
+              "number": "3.6",
+              "title": "Storage services",
+              "implicit": false,
+              "items": [
+                {
+                  "id": "clf-c02.d3.3-6.item-01",
+                  "text": "Amazon S3 — buckets, objects, durability, versioning",
+                  "hash": "0de489b986"
+                },
+                {
+                  "id": "clf-c02.d3.3-6.item-02",
+                  "text": "S3 storage classes: Standard, Intelligent-Tiering, Standard-IA, One Zone-IA, Glacier Instant/Flexible/Deep Archive",
+                  "hash": "3de7384fac"
+                },
+                {
+                  "id": "clf-c02.d3.3-6.item-03",
+                  "text": "S3 Lifecycle policies",
+                  "hash": "4eaac9feb6"
+                },
+                {
+                  "id": "clf-c02.d3.3-6.item-04",
+                  "text": "Amazon EBS — volume types, snapshots",
+                  "hash": "91a25ef091"
+                },
+                {
+                  "id": "clf-c02.d3.3-6.item-05",
+                  "text": "Instance store (ephemeral) vs EBS (persistent)",
+                  "hash": "508ccb609a"
+                },
+                {
+                  "id": "clf-c02.d3.3-6.item-06",
+                  "text": "Amazon EFS, Amazon FSx",
+                  "hash": "7681a6cfc8"
+                },
+                {
+                  "id": "clf-c02.d3.3-6.item-07",
+                  "text": "AWS Storage Gateway",
+                  "hash": "512eca0f2c"
+                },
+                {
+                  "id": "clf-c02.d3.3-6.item-08",
+                  "text": "AWS Backup",
+                  "hash": "b1dd84d3d0"
+                },
+                {
+                  "id": "clf-c02.d3.3-6.item-09",
+                  "text": "Object vs block vs file storage — the core distinction",
+                  "hash": "4532ef3ce4"
+                }
+              ]
+            },
+            {
+              "id": "clf-c02.d3.3-7",
+              "number": "3.7",
+              "title": "AI/ML, analytics, and other services",
+              "implicit": false,
+              "items": [
+                {
+                  "id": "clf-c02.d3.3-7.item-01",
+                  "text": "Amazon SageMaker (awareness)",
+                  "hash": "5be06aa093"
+                },
+                {
+                  "id": "clf-c02.d3.3-7.item-02",
+                  "text": "Amazon Comprehend, Rekognition, Polly, Transcribe, Translate, Textract, Lex, Kendra",
+                  "hash": "5fe10d8d85"
+                },
+                {
+                  "id": "clf-c02.d3.3-7.item-03",
+                  "text": "Amazon Q, Amazon Bedrock (awareness)",
+                  "hash": "61a7dff15c"
+                },
+                {
+                  "id": "clf-c02.d3.3-7.item-04",
+                  "text": "Amazon Athena, AWS Glue, Amazon EMR, Amazon Kinesis, AWS Lake Formation, Amazon QuickSight, Amazon MSK",
+                  "hash": "c300a0793d"
+                },
+                {
+                  "id": "clf-c02.d3.3-7.item-05",
+                  "text": "Application integration: Amazon SQS, Amazon SNS, Amazon EventBridge, AWS Step Functions",
+                  "hash": "d4432c4082"
+                },
+                {
+                  "id": "clf-c02.d3.3-7.item-06",
+                  "text": "Developer tools: AWS CodeBuild, CodeDeploy, CodePipeline, AWS CodeArtifact",
+                  "hash": "8634e54eb6"
+                },
+                {
+                  "id": "clf-c02.d3.3-7.item-07",
+                  "text": "Monitoring: Amazon CloudWatch, AWS Health Dashboard, AWS X-Ray",
+                  "hash": "ef37e6962d"
+                },
+                {
+                  "id": "clf-c02.d3.3-7.item-08",
+                  "text": "AWS Systems Manager",
+                  "hash": "328588f739"
+                },
+                {
+                  "id": "clf-c02.d3.3-7.item-09",
+                  "text": "AWS Amplify, AWS AppSync, AWS Device Farm",
+                  "hash": "1d9f34c491"
+                },
+                {
+                  "id": "clf-c02.d3.3-7.item-10",
+                  "text": "IoT and end-user compute at name-recognition level only",
+                  "hash": "13038d22b6"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "d4",
+          "number": 4,
+          "title": "Billing, Pricing, and Support",
+          "weightPercent": 12,
+          "note": null,
+          "sections": [
+            {
+              "id": "clf-c02.d4.4-1",
+              "number": "4.1",
+              "title": "Pricing models",
+              "implicit": false,
+              "items": [
+                {
+                  "id": "clf-c02.d4.4-1.item-01",
+                  "text": "On-Demand",
+                  "hash": "0e588f0c71"
+                },
+                {
+                  "id": "clf-c02.d4.4-1.item-02",
+                  "text": "Reserved Instances (Standard vs Convertible, payment options)",
+                  "hash": "91a3d5b28f"
+                },
+                {
+                  "id": "clf-c02.d4.4-1.item-03",
+                  "text": "Savings Plans (Compute, EC2 Instance, SageMaker)",
+                  "hash": "a3642b579b"
+                },
+                {
+                  "id": "clf-c02.d4.4-1.item-04",
+                  "text": "Spot Instances — and when they're appropriate",
+                  "hash": "51c7fd4ba3"
+                },
+                {
+                  "id": "clf-c02.d4.4-1.item-05",
+                  "text": "Dedicated Hosts vs Dedicated Instances",
+                  "hash": "1c51737421"
+                },
+                {
+                  "id": "clf-c02.d4.4-1.item-06",
+                  "text": "AWS Free Tier — the three types (always free, 12-month, trials)",
+                  "hash": "8843334fd6"
+                },
+                {
+                  "id": "clf-c02.d4.4-1.item-07",
+                  "text": "Data transfer costs: in vs out vs cross-AZ vs cross-Region",
+                  "hash": "9534f0dda5"
+                }
+              ]
+            },
+            {
+              "id": "clf-c02.d4.4-2",
+              "number": "4.2",
+              "title": "Billing and cost management",
+              "implicit": false,
+              "items": [
+                {
+                  "id": "clf-c02.d4.4-2.item-01",
+                  "text": "Consolidated billing and volume discounts",
+                  "hash": "6c8b3c1d24"
+                },
+                {
+                  "id": "clf-c02.d4.4-2.item-02",
+                  "text": "AWS Cost Explorer — analyse historical spend",
+                  "hash": "47fa415bb0"
+                },
+                {
+                  "id": "clf-c02.d4.4-2.item-03",
+                  "text": "AWS Budgets — alerts on thresholds",
+                  "hash": "65016a7847"
+                },
+                {
+                  "id": "clf-c02.d4.4-2.item-04",
+                  "text": "AWS Pricing Calculator — estimate before you build",
+                  "hash": "ef1286fb65"
+                },
+                {
+                  "id": "clf-c02.d4.4-2.item-05",
+                  "text": "AWS Cost and Usage Report",
+                  "hash": "f1c637e84d"
+                },
+                {
+                  "id": "clf-c02.d4.4-2.item-06",
+                  "text": "Cost allocation tags",
+                  "hash": "9d9d744c4b"
+                },
+                {
+                  "id": "clf-c02.d4.4-2.item-07",
+                  "text": "AWS Billing Conductor",
+                  "hash": "ba88195b79"
+                },
+                {
+                  "id": "clf-c02.d4.4-2.item-08",
+                  "text": "**Know which tool for which scenario** — this is the classic trap. \"Alert me when spend exceeds X\" = Budgets, not Cost Explorer.",
+                  "hash": "bb484a372e"
+                }
+              ]
+            },
+            {
+              "id": "clf-c02.d4.4-3",
+              "number": "4.3",
+              "title": "Support and resources",
+              "implicit": false,
+              "items": [
+                {
+                  "id": "clf-c02.d4.4-3.item-01",
+                  "text": "Support plans: Basic, Developer, Business, Enterprise On-Ramp, Enterprise — features and price tiers",
+                  "hash": "0b955ef44d"
+                },
+                {
+                  "id": "clf-c02.d4.4-3.item-02",
+                  "text": "Technical Account Manager (TAM) — which plans include one",
+                  "hash": "302a32abe2"
+                },
+                {
+                  "id": "clf-c02.d4.4-3.item-03",
+                  "text": "AWS Trusted Advisor — the five check categories, and which are limited on Basic/Developer",
+                  "hash": "4b2b72daa3"
+                },
+                {
+                  "id": "clf-c02.d4.4-3.item-04",
+                  "text": "AWS Support Center, AWS re:Post, AWS Marketplace",
+                  "hash": "14ef741031"
+                },
+                {
+                  "id": "clf-c02.d4.4-3.item-05",
+                  "text": "AWS Partner Network, AWS Professional Services, AWS IQ",
+                  "hash": "1956925dc9"
+                },
+                {
+                  "id": "clf-c02.d4.4-3.item-06",
+                  "text": "AWS Documentation, whitepapers, AWS Prescriptive Guidance",
+                  "hash": "e415ef5fba"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "itemCount": 120
+    },
+    {
+      "id": "aif-c01",
+      "code": "AIF-C01",
+      "name": "AI Practitioner",
+      "order": 2,
+      "intro": [],
+      "domainSummary": "Fundamentals of AI & ML 20% · Fundamentals of GenAI 24% · Applications of Foundation Models 28% · Responsible AI 14% · Security, Compliance & Governance for AI 14%",
+      "examFacts": {
+        "level": "Foundational",
+        "questions": 65,
+        "scoredQuestions": 50,
+        "timeMinutes": 90,
+        "passScore": 700,
+        "passScoreMax": 1000,
+        "price": 100,
+        "priceLabel": "$100",
+        "retakeWaitDays": 14,
+        "validityYears": 3
+      },
+      "reviseFrom": [
+        "**Revise from CLF-C02 before starting:** Shared Responsibility Model · IAM (users, roles, policies, least privilege) · S3 and storage classes · KMS and encryption at rest/in transit · CloudTrail, CloudWatch, AWS Config · AWS Organizations and SCPs · the AI/ML service name list from D3.7 (SageMaker, Comprehend, Rekognition, Polly, Transcribe, Translate, Textract, Lex, Kendra, Bedrock, Amazon Q). CLF gave you names only — here you need what each actually does and when to choose it."
+      ],
+      "reviseFromPanels": [
+        {
+          "title": "Revise from CLF-C02 before starting",
+          "topics": [
+            "Shared Responsibility Model",
+            "IAM (users, roles, policies, least privilege)",
+            "S3 and storage classes",
+            "KMS and encryption at rest/in transit",
+            "CloudTrail, CloudWatch, AWS Config",
+            "AWS Organizations and SCPs",
+            "the AI/ML service name list from D3.7 (SageMaker, Comprehend, Rekognition, Polly, Transcribe, Translate, Textract, Lex, Kendra, Bedrock, Amazon Q)"
+          ],
+          "note": "CLF gave you names only — here you need what each actually does and when to choose it."
+        }
+      ],
+      "domains": [
+        {
+          "id": "d1",
+          "number": 1,
+          "title": "Fundamentals of AI and ML",
+          "weightPercent": 20,
+          "note": null,
+          "sections": [
+            {
+              "id": "aif-c01.d1.1-1",
+              "number": "1.1",
+              "title": "Basic AI concepts and terminology",
+              "implicit": false,
+              "items": [
+                {
+                  "id": "aif-c01.d1.1-1.item-01",
+                  "text": "AI vs ML vs deep learning vs generative AI vs agentic AI — the nesting relationship",
+                  "hash": "2949ed329e"
+                },
+                {
+                  "id": "aif-c01.d1.1-1.item-02",
+                  "text": "Core terms: model, algorithm, training, inferencing, neural network, computer vision, NLP",
+                  "hash": "6499e3c95d"
+                },
+                {
+                  "id": "aif-c01.d1.1-1.item-03",
+                  "text": "Bias, fairness, variance, overfitting, underfitting, fit",
+                  "hash": "f4ddae0759"
+                },
+                {
+                  "id": "aif-c01.d1.1-1.item-04",
+                  "text": "Large language model (LLM), embedding, tokens",
+                  "hash": "252e6f4034"
+                },
+                {
+                  "id": "aif-c01.d1.1-1.item-05",
+                  "text": "Types of inferencing: batch, real-time, asynchronous, serverless",
+                  "hash": "aaab35fff3"
+                }
+              ]
+            },
+            {
+              "id": "aif-c01.d1.1-2",
+              "number": "1.2",
+              "title": "Practical use cases for AI",
+              "implicit": false,
+              "items": [
+                {
+                  "id": "aif-c01.d1.1-2.item-01",
+                  "text": "When AI is appropriate vs when a rules-based system is better (cost, interpretability, data availability)",
+                  "hash": "e2650f5016"
+                },
+                {
+                  "id": "aif-c01.d1.1-2.item-02",
+                  "text": "Use case categories: forecasting, recommendation, anomaly/fraud detection, computer vision, speech, translation, document processing, personalisation",
+                  "hash": "2a506abec7"
+                },
+                {
+                  "id": "aif-c01.d1.1-2.item-03",
+                  "text": "Mapping a business problem to a technique: classification vs regression vs clustering",
+                  "hash": "d7b0944c2d"
+                },
+                {
+                  "id": "aif-c01.d1.1-2.item-04",
+                  "text": "AWS managed AI services and what each solves",
+                  "hash": "41fe186832"
+                }
+              ]
+            },
+            {
+              "id": "aif-c01.d1.1-3",
+              "number": "1.3",
+              "title": "ML development lifecycle",
+              "implicit": false,
+              "items": [
+                {
+                  "id": "aif-c01.d1.1-3.item-01",
+                  "text": "Stages: business goal → data collection → preprocessing → feature engineering → training → tuning → evaluation → deployment → monitoring",
+                  "hash": "9cbcb92b82"
+                },
+                {
+                  "id": "aif-c01.d1.1-3.item-02",
+                  "text": "Supervised, unsupervised, reinforcement learning",
+                  "hash": "0854ac249c"
+                },
+                {
+                  "id": "aif-c01.d1.1-3.item-03",
+                  "text": "Training data concepts: labelled vs unlabelled, training/validation/test splits",
+                  "hash": "816dc460dd"
+                },
+                {
+                  "id": "aif-c01.d1.1-3.item-04",
+                  "text": "SageMaker components at conceptual level: Data Wrangler, Feature Store, Model Monitor, Clarify, JumpStart, Canvas, Ground Truth, Pipelines",
+                  "hash": "b7ae131cbb"
+                },
+                {
+                  "id": "aif-c01.d1.1-3.item-05",
+                  "text": "Model evaluation metrics: accuracy, precision, recall, F1, AUC-ROC, confusion matrix",
+                  "hash": "0afd23ed50"
+                },
+                {
+                  "id": "aif-c01.d1.1-3.item-06",
+                  "text": "Business metrics: cost per inference, ROI, customer satisfaction",
+                  "hash": "b5db8bd7a3"
+                },
+                {
+                  "id": "aif-c01.d1.1-3.item-07",
+                  "text": "MLOps concept — experimentation, retraining, versioning, monitoring",
+                  "hash": "46c17044b0"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "d2",
+          "number": 2,
+          "title": "Fundamentals of Generative AI",
+          "weightPercent": 24,
+          "note": null,
+          "sections": [
+            {
+              "id": "aif-c01.d2.2-1",
+              "number": "2.1",
+              "title": "Core GenAI concepts",
+              "implicit": false,
+              "items": [
+                {
+                  "id": "aif-c01.d2.2-1.item-01",
+                  "text": "Foundation models — what they are, why pretraining matters",
+                  "hash": "ba52ec06a4"
+                },
+                {
+                  "id": "aif-c01.d2.2-1.item-02",
+                  "text": "Tokens, embeddings, vectors, chunking",
+                  "hash": "d2c052f95f"
+                },
+                {
+                  "id": "aif-c01.d2.2-1.item-03",
+                  "text": "Transformer architecture at conceptual level",
+                  "hash": "8e6e340e6b"
+                },
+                {
+                  "id": "aif-c01.d2.2-1.item-04",
+                  "text": "Diffusion models, multimodal models",
+                  "hash": "ef0cb959e2"
+                },
+                {
+                  "id": "aif-c01.d2.2-1.item-05",
+                  "text": "Prompt engineering basics",
+                  "hash": "bcdcb09a34"
+                },
+                {
+                  "id": "aif-c01.d2.2-1.item-06",
+                  "text": "Single-shot / few-shot / zero-shot",
+                  "hash": "0318e810b7"
+                },
+                {
+                  "id": "aif-c01.d2.2-1.item-07",
+                  "text": "Use cases: summarisation, translation, code generation, chatbots, image and audio generation, search",
+                  "hash": "78a1fd1bb6"
+                }
+              ]
+            },
+            {
+              "id": "aif-c01.d2.2-2",
+              "number": "2.2",
+              "title": "Capabilities and limitations",
+              "implicit": false,
+              "items": [
+                {
+                  "id": "aif-c01.d2.2-2.item-01",
+                  "text": "Advantages: adaptability, responsiveness, simplicity of getting started",
+                  "hash": "72578e7331"
+                },
+                {
+                  "id": "aif-c01.d2.2-2.item-02",
+                  "text": "Limitations: hallucination, nondeterminism, interpretability, inaccuracy",
+                  "hash": "1a9872b6b6"
+                },
+                {
+                  "id": "aif-c01.d2.2-2.item-03",
+                  "text": "Selecting the right model for a use case",
+                  "hash": "35530cd053"
+                },
+                {
+                  "id": "aif-c01.d2.2-2.item-04",
+                  "text": "Business metrics for GenAI: cross-domain performance, efficiency, conversion rate, average revenue per user, customer lifetime value",
+                  "hash": "47839a13c6"
+                }
+              ]
+            },
+            {
+              "id": "aif-c01.d2.2-3",
+              "number": "2.3",
+              "title": "AWS infrastructure for GenAI",
+              "implicit": false,
+              "items": [
+                {
+                  "id": "aif-c01.d2.2-3.item-01",
+                  "text": "Amazon Bedrock — managed foundation models",
+                  "hash": "ce6864f969"
+                },
+                {
+                  "id": "aif-c01.d2.2-3.item-02",
+                  "text": "Amazon SageMaker JumpStart",
+                  "hash": "d81b8edfcb"
+                },
+                {
+                  "id": "aif-c01.d2.2-3.item-03",
+                  "text": "Amazon Q Developer, Amazon Q Business",
+                  "hash": "280ee24b69"
+                },
+                {
+                  "id": "aif-c01.d2.2-3.item-04",
+                  "text": "PartyRock",
+                  "hash": "013fecfb38"
+                },
+                {
+                  "id": "aif-c01.d2.2-3.item-05",
+                  "text": "AWS Trainium and AWS Inferentia (cost/performance of custom silicon)",
+                  "hash": "c99b5e2888"
+                },
+                {
+                  "id": "aif-c01.d2.2-3.item-06",
+                  "text": "Benefits of building on AWS: security, compliance, responsibility, speed to market",
+                  "hash": "919b2aa466"
+                },
+                {
+                  "id": "aif-c01.d2.2-3.item-07",
+                  "text": "Cost trade-offs: token-based pricing, provisioned throughput, on-demand, model size vs latency vs cost",
+                  "hash": "523daf2138"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "d3",
+          "number": 3,
+          "title": "Applications of Foundation Models",
+          "weightPercent": 28,
+          "note": "Largest domain. Also the most technical.",
+          "sections": [
+            {
+              "id": "aif-c01.d3.3-1",
+              "number": "3.1",
+              "title": "Design considerations for FM applications",
+              "implicit": false,
+              "items": [
+                {
+                  "id": "aif-c01.d3.3-1.item-01",
+                  "text": "Model selection criteria: cost, modality, latency, multilingual, model size, complexity, customisation, input/output length",
+                  "hash": "f0742adcc2"
+                },
+                {
+                  "id": "aif-c01.d3.3-1.item-02",
+                  "text": "Inference parameters: temperature, top-k, top-p, response length — and what changing each does",
+                  "hash": "d674f57572"
+                },
+                {
+                  "id": "aif-c01.d3.3-1.item-03",
+                  "text": "Retrieval Augmented Generation (RAG) — the full pattern",
+                  "hash": "47e0350c47"
+                },
+                {
+                  "id": "aif-c01.d3.3-1.item-04",
+                  "text": "Vector databases on AWS: Amazon OpenSearch Service, Amazon Aurora with pgvector, Amazon Neptune, Amazon DocumentDB, Amazon RDS for PostgreSQL",
+                  "hash": "26b81a80e0"
+                },
+                {
+                  "id": "aif-c01.d3.3-1.item-05",
+                  "text": "Embeddings storage and similarity search",
+                  "hash": "c483e0e1d1"
+                },
+                {
+                  "id": "aif-c01.d3.3-1.item-06",
+                  "text": "Cost trade-offs of customisation approaches: prompt engineering < RAG < fine-tuning < continued pretraining < training from scratch",
+                  "hash": "cd04525e50"
+                },
+                {
+                  "id": "aif-c01.d3.3-1.item-07",
+                  "text": "Agents — Amazon Bedrock Agents for multi-step tasks",
+                  "hash": "834af53850"
+                }
+              ]
+            },
+            {
+              "id": "aif-c01.d3.3-2",
+              "number": "3.2",
+              "title": "Prompt engineering",
+              "implicit": false,
+              "items": [
+                {
+                  "id": "aif-c01.d3.3-2.item-01",
+                  "text": "Prompt components: instruction, context, negative prompts, model input/output indicators",
+                  "hash": "a5a8cc766f"
+                },
+                {
+                  "id": "aif-c01.d3.3-2.item-02",
+                  "text": "Techniques: zero-shot, few-shot, chain-of-thought, prompt templates",
+                  "hash": "7441974c79"
+                },
+                {
+                  "id": "aif-c01.d3.3-2.item-03",
+                  "text": "Best practices: specificity, guardrails, experimentation, multiple comments",
+                  "hash": "a83a223848"
+                },
+                {
+                  "id": "aif-c01.d3.3-2.item-04",
+                  "text": "Risks: prompt injection, jailbreaking, hijacking, poisoning, exposure",
+                  "hash": "218975c9b1"
+                }
+              ]
+            },
+            {
+              "id": "aif-c01.d3.3-3",
+              "number": "3.3",
+              "title": "Training and fine-tuning",
+              "implicit": false,
+              "items": [
+                {
+                  "id": "aif-c01.d3.3-3.item-01",
+                  "text": "Pretraining vs fine-tuning vs continued pretraining",
+                  "hash": "c178b70454"
+                },
+                {
+                  "id": "aif-c01.d3.3-3.item-02",
+                  "text": "Instruction tuning, domain adaptation, transfer learning",
+                  "hash": "ac47f9a8fd"
+                },
+                {
+                  "id": "aif-c01.d3.3-3.item-03",
+                  "text": "Data preparation for fine-tuning: curation, labelling, governance, size, representativeness",
+                  "hash": "01d1d11339"
+                },
+                {
+                  "id": "aif-c01.d3.3-3.item-04",
+                  "text": "Continuous pretraining vs RLHF (reinforcement learning from human feedback)",
+                  "hash": "bd3a567fed"
+                }
+              ]
+            },
+            {
+              "id": "aif-c01.d3.3-4",
+              "number": "3.4",
+              "title": "Evaluating FM performance",
+              "implicit": false,
+              "items": [
+                {
+                  "id": "aif-c01.d3.3-4.item-01",
+                  "text": "Human evaluation and benchmark datasets",
+                  "hash": "d0fb20458d"
+                },
+                {
+                  "id": "aif-c01.d3.3-4.item-02",
+                  "text": "Metrics: ROUGE, BLEU, BERTScore, perplexity",
+                  "hash": "97e1207b76"
+                },
+                {
+                  "id": "aif-c01.d3.3-4.item-03",
+                  "text": "Aligning evaluation to business objectives",
+                  "hash": "3f9a0601dd"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "d4",
+          "number": 4,
+          "title": "Guidelines for Responsible AI",
+          "weightPercent": 14,
+          "note": null,
+          "sections": [
+            {
+              "id": "aif-c01.d4.main",
+              "number": null,
+              "title": "Guidelines for Responsible AI",
+              "implicit": true,
+              "items": [
+                {
+                  "id": "aif-c01.d4.main.item-01",
+                  "text": "Responsible AI dimensions: fairness, explainability, robustness, privacy and security, transparency, veracity, governance, controllability, safety",
+                  "hash": "fe73df8aef"
+                },
+                {
+                  "id": "aif-c01.d4.main.item-02",
+                  "text": "Amazon Bedrock Guardrails",
+                  "hash": "cb112fa9eb"
+                },
+                {
+                  "id": "aif-c01.d4.main.item-03",
+                  "text": "Dataset bias: representation, curation, balanced datasets",
+                  "hash": "6094407e81"
+                },
+                {
+                  "id": "aif-c01.d4.main.item-04",
+                  "text": "Effects of bias: legal risk, customer harm, reputational damage",
+                  "hash": "f3e7f4c298"
+                },
+                {
+                  "id": "aif-c01.d4.main.item-05",
+                  "text": "Amazon SageMaker Clarify — bias detection and feature importance",
+                  "hash": "a4b9076353"
+                },
+                {
+                  "id": "aif-c01.d4.main.item-06",
+                  "text": "SageMaker Model Monitor",
+                  "hash": "dd4c44636c"
+                },
+                {
+                  "id": "aif-c01.d4.main.item-07",
+                  "text": "Amazon Augmented AI (A2I) — human review workflows",
+                  "hash": "70c66f4b7e"
+                },
+                {
+                  "id": "aif-c01.d4.main.item-08",
+                  "text": "Transparent models: model cards, AI Service Cards, open source vs proprietary trade-offs",
+                  "hash": "bcc0af4d88"
+                },
+                {
+                  "id": "aif-c01.d4.main.item-09",
+                  "text": "Interpretability vs explainability, and the accuracy trade-off",
+                  "hash": "66184ae59f"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "d5",
+          "number": 5,
+          "title": "Security, Compliance, and Governance for AI",
+          "weightPercent": 14,
+          "note": null,
+          "sections": [
+            {
+              "id": "aif-c01.d5.main",
+              "number": null,
+              "title": "Security, Compliance, and Governance for AI",
+              "implicit": true,
+              "items": [
+                {
+                  "id": "aif-c01.d5.main.item-01",
+                  "text": "Securing AI systems: IAM roles and policies applied to AI services, encryption, data quality",
+                  "hash": "2336f57f5f"
+                },
+                {
+                  "id": "aif-c01.d5.main.item-02",
+                  "text": "SageMaker Role Manager",
+                  "hash": "c4278ebec3"
+                },
+                {
+                  "id": "aif-c01.d5.main.item-03",
+                  "text": "Source citation and data lineage / provenance",
+                  "hash": "a71e28644c"
+                },
+                {
+                  "id": "aif-c01.d5.main.item-04",
+                  "text": "Data cataloguing: AWS Glue Data Catalog, SageMaker Feature Store",
+                  "hash": "ef05899ad7"
+                },
+                {
+                  "id": "aif-c01.d5.main.item-05",
+                  "text": "Amazon Macie for sensitive training data",
+                  "hash": "ea00e057cf"
+                },
+                {
+                  "id": "aif-c01.d5.main.item-06",
+                  "text": "Governance protocols: policies, review cadences, transparency standards",
+                  "hash": "75050d8e71"
+                },
+                {
+                  "id": "aif-c01.d5.main.item-07",
+                  "text": "Compliance standards for AI: ISO, SOC, algorithm accountability laws",
+                  "hash": "0418008ba1"
+                },
+                {
+                  "id": "aif-c01.d5.main.item-08",
+                  "text": "AWS Config, AWS Audit Manager, AWS Artifact, AWS CloudTrail, AWS Trusted Advisor in an AI context",
+                  "hash": "ae823a59db"
+                },
+                {
+                  "id": "aif-c01.d5.main.item-09",
+                  "text": "Data governance: lifecycle, retention, monitoring, residency",
+                  "hash": "5b119d295e"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "itemCount": 70
+    },
+    {
+      "id": "saa-c03",
+      "code": "SAA-C03",
+      "name": "Solutions Architect Associate",
+      "order": 3,
+      "intro": [
+        "**This is the one your college grades.** It is a large step up from the two foundational exams — CLF asks \"what is this service\", SAA asks \"which of these four valid-looking architectures is correct given these constraints\"."
+      ],
+      "domainSummary": "Design Secure Architectures 30% · Design Resilient Architectures 26% · Design High-Performing Architectures 24% · Design Cost-Optimized Architectures 20%",
+      "examFacts": {
+        "level": "Associate",
+        "questions": 65,
+        "scoredQuestions": 50,
+        "timeMinutes": 130,
+        "passScore": 720,
+        "passScoreMax": 1000,
+        "price": 150,
+        "priceLabel": "$150",
+        "retakeWaitDays": 14,
+        "validityYears": 3
+      },
+      "reviseFrom": [
+        "**Revise from CLF-C02 before starting (now at depth, not awareness):** Well-Architected pillars · Regions/AZs/Edge Locations · Shared Responsibility Model · IAM users/roles/policies · VPC basics, subnets, route tables, IGW, NAT · security groups vs NACLs · S3 and all storage classes · EBS vs EFS vs instance store · EC2 families, ELB types, Auto Scaling · RDS, Aurora, DynamoDB, ElastiCache, Redshift · Route 53 · CloudFront · SQS, SNS, EventBridge, Step Functions · Lambda, ECS, EKS, Fargate · CloudWatch, CloudTrail, AWS Config · KMS, ACM, Secrets Manager, WAF, Shield · pricing models (On-Demand, Reserved, Savings Plans, Spot) · Cost Explorer, Budgets. You'll now need the *limits and trade-offs* of each, not just the description."
+      ],
+      "reviseFromPanels": [
+        {
+          "title": "Revise from CLF-C02 before starting (now at depth, not awareness)",
+          "topics": [
+            "Well-Architected pillars",
+            "Regions/AZs/Edge Locations",
+            "Shared Responsibility Model",
+            "IAM users/roles/policies",
+            "VPC basics, subnets, route tables, IGW, NAT",
+            "security groups vs NACLs",
+            "S3 and all storage classes",
+            "EBS vs EFS vs instance store",
+            "EC2 families, ELB types, Auto Scaling",
+            "RDS, Aurora, DynamoDB, ElastiCache, Redshift",
+            "Route 53",
+            "CloudFront",
+            "SQS, SNS, EventBridge, Step Functions",
+            "Lambda, ECS, EKS, Fargate",
+            "CloudWatch, CloudTrail, AWS Config",
+            "KMS, ACM, Secrets Manager, WAF, Shield",
+            "pricing models (On-Demand, Reserved, Savings Plans, Spot)",
+            "Cost Explorer, Budgets"
+          ],
+          "note": "You'll now need the *limits and trade-offs* of each, not just the description."
+        }
+      ],
+      "domains": [
+        {
+          "id": "d1",
+          "number": 1,
+          "title": "Design Secure Architectures",
+          "weightPercent": 30,
+          "note": null,
+          "sections": [
+            {
+              "id": "saa-c03.d1.1-1",
+              "number": "1.1",
+              "title": "Secure access to AWS resources",
+              "implicit": false,
+              "items": [
+                {
+                  "id": "saa-c03.d1.1-1.item-01",
+                  "text": "IAM policy structure: effect, action, resource, condition — and reading a policy document",
+                  "hash": "7194e68fd2"
+                },
+                {
+                  "id": "saa-c03.d1.1-1.item-02",
+                  "text": "Policy evaluation logic: explicit deny > explicit allow > implicit deny",
+                  "hash": "2fb88fd32a"
+                },
+                {
+                  "id": "saa-c03.d1.1-1.item-03",
+                  "text": "Identity-based vs resource-based policies",
+                  "hash": "12f2c18c8e"
+                },
+                {
+                  "id": "saa-c03.d1.1-1.item-04",
+                  "text": "IAM roles for EC2 (instance profiles), cross-account roles, service roles",
+                  "hash": "34d0d5c18e"
+                },
+                {
+                  "id": "saa-c03.d1.1-1.item-05",
+                  "text": "AWS STS and temporary credentials, role assumption, external ID",
+                  "hash": "81e34cd507"
+                },
+                {
+                  "id": "saa-c03.d1.1-1.item-06",
+                  "text": "Federation: SAML, IAM Identity Center, Cognito user pools vs identity pools",
+                  "hash": "2300645550"
+                },
+                {
+                  "id": "saa-c03.d1.1-1.item-07",
+                  "text": "AWS Organizations, SCPs, multi-account strategy, AWS Control Tower",
+                  "hash": "60e7a0e4c3"
+                },
+                {
+                  "id": "saa-c03.d1.1-1.item-08",
+                  "text": "Root account protection, credential rotation, access keys vs roles",
+                  "hash": "f5e64eb583"
+                },
+                {
+                  "id": "saa-c03.d1.1-1.item-09",
+                  "text": "AWS RAM for cross-account resource sharing",
+                  "hash": "39e744e6ef"
+                },
+                {
+                  "id": "saa-c03.d1.1-1.item-10",
+                  "text": "IAM Access Analyzer",
+                  "hash": "be7bdf61eb"
+                }
+              ]
+            },
+            {
+              "id": "saa-c03.d1.1-2",
+              "number": "1.2",
+              "title": "Secure workloads and applications",
+              "implicit": false,
+              "items": [
+                {
+                  "id": "saa-c03.d1.1-2.item-01",
+                  "text": "VPC design for security: public/private/isolated subnet tiers",
+                  "hash": "9fc54c3a59"
+                },
+                {
+                  "id": "saa-c03.d1.1-2.item-02",
+                  "text": "Security groups (stateful) vs NACLs (stateless) — layered defence",
+                  "hash": "90bfed742b"
+                },
+                {
+                  "id": "saa-c03.d1.1-2.item-03",
+                  "text": "NAT gateway vs NAT instance vs egress-only internet gateway",
+                  "hash": "861a609d40"
+                },
+                {
+                  "id": "saa-c03.d1.1-2.item-04",
+                  "text": "VPC endpoints: Gateway (S3, DynamoDB) vs Interface (PrivateLink)",
+                  "hash": "0cbd5df177"
+                },
+                {
+                  "id": "saa-c03.d1.1-2.item-05",
+                  "text": "VPC peering vs Transit Gateway — and the limits of each",
+                  "hash": "805a8b3000"
+                },
+                {
+                  "id": "saa-c03.d1.1-2.item-06",
+                  "text": "AWS WAF rules, rate limiting, managed rule groups",
+                  "hash": "c2f6a947a0"
+                },
+                {
+                  "id": "saa-c03.d1.1-2.item-07",
+                  "text": "AWS Shield Standard vs Advanced",
+                  "hash": "d8271e7eda"
+                },
+                {
+                  "id": "saa-c03.d1.1-2.item-08",
+                  "text": "AWS Network Firewall, AWS Firewall Manager",
+                  "hash": "735b0d0617"
+                },
+                {
+                  "id": "saa-c03.d1.1-2.item-09",
+                  "text": "Bastion hosts vs Systems Manager Session Manager",
+                  "hash": "27fcacd4ee"
+                },
+                {
+                  "id": "saa-c03.d1.1-2.item-10",
+                  "text": "Amazon GuardDuty, Amazon Inspector, AWS Security Hub in an architecture",
+                  "hash": "7c221d1665"
+                },
+                {
+                  "id": "saa-c03.d1.1-2.item-11",
+                  "text": "VPC Flow Logs",
+                  "hash": "dda5d896d4"
+                },
+                {
+                  "id": "saa-c03.d1.1-2.item-12",
+                  "text": "Amazon Cognito for application-level auth",
+                  "hash": "3de22452da"
+                }
+              ]
+            },
+            {
+              "id": "saa-c03.d1.1-3",
+              "number": "1.3",
+              "title": "Data security controls",
+              "implicit": false,
+              "items": [
+                {
+                  "id": "saa-c03.d1.1-3.item-01",
+                  "text": "Encryption at rest: S3 (SSE-S3, SSE-KMS, SSE-C, DSSE-KMS), EBS, RDS, DynamoDB",
+                  "hash": "ca42e29494"
+                },
+                {
+                  "id": "saa-c03.d1.1-3.item-02",
+                  "text": "Encryption in transit: TLS, ACM, VPN, certificate management",
+                  "hash": "1f1897235b"
+                },
+                {
+                  "id": "saa-c03.d1.1-3.item-03",
+                  "text": "AWS KMS: customer managed keys vs AWS managed keys, key policies, grants, key rotation, multi-Region keys",
+                  "hash": "9ae355faa8"
+                },
+                {
+                  "id": "saa-c03.d1.1-3.item-04",
+                  "text": "AWS CloudHSM — when it's required over KMS",
+                  "hash": "fb06adc618"
+                },
+                {
+                  "id": "saa-c03.d1.1-3.item-05",
+                  "text": "AWS Secrets Manager vs Systems Manager Parameter Store — rotation, cost, size limits",
+                  "hash": "dd741b4224"
+                },
+                {
+                  "id": "saa-c03.d1.1-3.item-06",
+                  "text": "S3 features: bucket policies, Block Public Access, Object Lock, versioning, MFA Delete, access points, presigned URLs",
+                  "hash": "00784bd2c1"
+                },
+                {
+                  "id": "saa-c03.d1.1-3.item-07",
+                  "text": "Amazon Macie for data classification",
+                  "hash": "eacdbb8ab0"
+                },
+                {
+                  "id": "saa-c03.d1.1-3.item-08",
+                  "text": "Data retention, backup, and compliance requirements",
+                  "hash": "8979eeef7d"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "d2",
+          "number": 2,
+          "title": "Design Resilient Architectures",
+          "weightPercent": 26,
+          "note": null,
+          "sections": [
+            {
+              "id": "saa-c03.d2.2-1",
+              "number": "2.1",
+              "title": "Scalable and loosely coupled architectures",
+              "implicit": false,
+              "items": [
+                {
+                  "id": "saa-c03.d2.2-1.item-01",
+                  "text": "Multi-tier architecture design",
+                  "hash": "308da1527e"
+                },
+                {
+                  "id": "saa-c03.d2.2-1.item-02",
+                  "text": "Decoupling with SQS (standard vs FIFO, visibility timeout, DLQ, long polling)",
+                  "hash": "644d794d1f"
+                },
+                {
+                  "id": "saa-c03.d2.2-1.item-03",
+                  "text": "SNS (fan-out, filter policies, FIFO topics)",
+                  "hash": "e732c538a2"
+                },
+                {
+                  "id": "saa-c03.d2.2-1.item-04",
+                  "text": "Amazon MQ — when to use over SQS/SNS",
+                  "hash": "9b67dc869f"
+                },
+                {
+                  "id": "saa-c03.d2.2-1.item-05",
+                  "text": "EventBridge (event bus, rules, schedules) vs SNS vs SQS — the distinction is heavily tested",
+                  "hash": "71818b7464"
+                },
+                {
+                  "id": "saa-c03.d2.2-1.item-06",
+                  "text": "AWS Step Functions — Standard vs Express workflows",
+                  "hash": "7540ecd98e"
+                },
+                {
+                  "id": "saa-c03.d2.2-1.item-07",
+                  "text": "Auto Scaling: target tracking, step, simple, scheduled, predictive policies",
+                  "hash": "87f8b2dd6d"
+                },
+                {
+                  "id": "saa-c03.d2.2-1.item-08",
+                  "text": "Load balancer selection: ALB (Layer 7) vs NLB (Layer 4) vs GWLB — sticky sessions, target groups, health checks",
+                  "hash": "eb8831c9b8"
+                },
+                {
+                  "id": "saa-c03.d2.2-1.item-09",
+                  "text": "API Gateway (REST vs HTTP vs WebSocket) and throttling",
+                  "hash": "bd3d60476d"
+                },
+                {
+                  "id": "saa-c03.d2.2-1.item-10",
+                  "text": "Serverless architecture patterns",
+                  "hash": "c919dcdf6e"
+                },
+                {
+                  "id": "saa-c03.d2.2-1.item-11",
+                  "text": "Container orchestration: ECS vs EKS, EC2 launch type vs Fargate",
+                  "hash": "2f8b434e5b"
+                },
+                {
+                  "id": "saa-c03.d2.2-1.item-12",
+                  "text": "Microservices, event-driven, and stateless design principles",
+                  "hash": "8d5359e589"
+                },
+                {
+                  "id": "saa-c03.d2.2-1.item-13",
+                  "text": "Read replicas, caching layers, database sharding",
+                  "hash": "a0c1f3fc43"
+                }
+              ]
+            },
+            {
+              "id": "saa-c03.d2.2-2",
+              "number": "2.2",
+              "title": "Highly available and fault-tolerant architectures",
+              "implicit": false,
+              "items": [
+                {
+                  "id": "saa-c03.d2.2-2.item-01",
+                  "text": "High availability vs fault tolerance vs disaster recovery — precise definitions",
+                  "hash": "457781402a"
+                },
+                {
+                  "id": "saa-c03.d2.2-2.item-02",
+                  "text": "Multi-AZ deployments: RDS Multi-AZ, ELB across AZs, ASG across AZs",
+                  "hash": "e3b97c1653"
+                },
+                {
+                  "id": "saa-c03.d2.2-2.item-03",
+                  "text": "Multi-Region architectures: Aurora Global Database, DynamoDB Global Tables, S3 Cross-Region Replication, Route 53 failover",
+                  "hash": "007dfe756f"
+                },
+                {
+                  "id": "saa-c03.d2.2-2.item-04",
+                  "text": "DR strategies and their RTO/RPO: Backup & Restore, Pilot Light, Warm Standby, Multi-Site Active/Active",
+                  "hash": "d3a9fc4b16"
+                },
+                {
+                  "id": "saa-c03.d2.2-2.item-05",
+                  "text": "Route 53 routing policies: simple, weighted, latency, failover, geolocation, geoproximity, multivalue — plus health checks",
+                  "hash": "704621bb32"
+                },
+                {
+                  "id": "saa-c03.d2.2-2.item-06",
+                  "text": "AWS Backup, snapshots, AMI strategy",
+                  "hash": "cf2d550bd6"
+                },
+                {
+                  "id": "saa-c03.d2.2-2.item-07",
+                  "text": "Amazon S3 durability and availability by storage class",
+                  "hash": "1114c1a9db"
+                },
+                {
+                  "id": "saa-c03.d2.2-2.item-08",
+                  "text": "EFS vs FSx availability characteristics",
+                  "hash": "9b1f81aaca"
+                },
+                {
+                  "id": "saa-c03.d2.2-2.item-09",
+                  "text": "Storage Gateway for hybrid resilience",
+                  "hash": "d39c629113"
+                },
+                {
+                  "id": "saa-c03.d2.2-2.item-10",
+                  "text": "AWS Elastic Disaster Recovery",
+                  "hash": "9a8cd3bb90"
+                },
+                {
+                  "id": "saa-c03.d2.2-2.item-11",
+                  "text": "Failure isolation, cell-based architecture, circuit breakers",
+                  "hash": "71527d531f"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "d3",
+          "number": 3,
+          "title": "Design High-Performing Architectures",
+          "weightPercent": 24,
+          "note": null,
+          "sections": [
+            {
+              "id": "saa-c03.d3.3-1",
+              "number": "3.1",
+              "title": "High-performing storage",
+              "implicit": false,
+              "items": [
+                {
+                  "id": "saa-c03.d3.3-1.item-01",
+                  "text": "S3 performance: prefix design, multipart upload, Transfer Acceleration, byte-range fetches",
+                  "hash": "bc010a477e"
+                },
+                {
+                  "id": "saa-c03.d3.3-1.item-02",
+                  "text": "S3 storage class selection by access pattern, Intelligent-Tiering, lifecycle transitions",
+                  "hash": "6e42719886"
+                },
+                {
+                  "id": "saa-c03.d3.3-1.item-03",
+                  "text": "EBS volume types: gp2, gp3, io1, io2, io2 Block Express, st1, sc1 — IOPS and throughput characteristics",
+                  "hash": "60fd7f83e4"
+                },
+                {
+                  "id": "saa-c03.d3.3-1.item-04",
+                  "text": "EBS Multi-Attach, encryption, snapshot performance",
+                  "hash": "5ad0403634"
+                },
+                {
+                  "id": "saa-c03.d3.3-1.item-05",
+                  "text": "Instance store use cases",
+                  "hash": "81386bced3"
+                },
+                {
+                  "id": "saa-c03.d3.3-1.item-06",
+                  "text": "EFS performance modes and throughput modes",
+                  "hash": "95ed127b6d"
+                },
+                {
+                  "id": "saa-c03.d3.3-1.item-07",
+                  "text": "Amazon FSx variants: Windows File Server, Lustre, NetApp ONTAP, OpenZFS — pick the right one",
+                  "hash": "5a5e5918b8"
+                },
+                {
+                  "id": "saa-c03.d3.3-1.item-08",
+                  "text": "AWS Storage Gateway modes: File, Volume (cached vs stored), Tape",
+                  "hash": "374a072e41"
+                }
+              ]
+            },
+            {
+              "id": "saa-c03.d3.3-2",
+              "number": "3.2",
+              "title": "High-performing compute",
+              "implicit": false,
+              "items": [
+                {
+                  "id": "saa-c03.d3.3-2.item-01",
+                  "text": "EC2 instance family selection: general purpose, compute optimised, memory optimised, storage optimised, accelerated",
+                  "hash": "3197010797"
+                },
+                {
+                  "id": "saa-c03.d3.3-2.item-02",
+                  "text": "Placement groups: cluster, spread, partition",
+                  "hash": "f352cb74d9"
+                },
+                {
+                  "id": "saa-c03.d3.3-2.item-03",
+                  "text": "Enhanced networking, ENA, EFA",
+                  "hash": "81e0acd28e"
+                },
+                {
+                  "id": "saa-c03.d3.3-2.item-04",
+                  "text": "Lambda performance: memory/CPU coupling, cold starts, provisioned concurrency, reserved concurrency, timeouts, layers",
+                  "hash": "b5018038c5"
+                },
+                {
+                  "id": "saa-c03.d3.3-2.item-05",
+                  "text": "Containers on ECS/EKS/Fargate for performance",
+                  "hash": "1f961111f7"
+                },
+                {
+                  "id": "saa-c03.d3.3-2.item-06",
+                  "text": "Auto Scaling for performance vs for cost",
+                  "hash": "02454f737a"
+                },
+                {
+                  "id": "saa-c03.d3.3-2.item-07",
+                  "text": "AWS Batch for high-throughput jobs",
+                  "hash": "c03e7fb0a4"
+                },
+                {
+                  "id": "saa-c03.d3.3-2.item-08",
+                  "text": "Graviton instances",
+                  "hash": "694cc0cc36"
+                }
+              ]
+            },
+            {
+              "id": "saa-c03.d3.3-3",
+              "number": "3.3",
+              "title": "High-performing databases",
+              "implicit": false,
+              "items": [
+                {
+                  "id": "saa-c03.d3.3-3.item-01",
+                  "text": "RDS: instance sizing, read replicas (cross-Region), Multi-AZ vs read replica distinction",
+                  "hash": "27576980e9"
+                },
+                {
+                  "id": "saa-c03.d3.3-3.item-02",
+                  "text": "Aurora: cluster architecture, replicas, Aurora Serverless v2, Global Database",
+                  "hash": "76e3563e31"
+                },
+                {
+                  "id": "saa-c03.d3.3-3.item-03",
+                  "text": "DynamoDB: partition key design, hot partitions, LSI vs GSI, on-demand vs provisioned capacity, auto scaling, DAX",
+                  "hash": "b40872096c"
+                },
+                {
+                  "id": "saa-c03.d3.3-3.item-04",
+                  "text": "DynamoDB Streams, TTL",
+                  "hash": "087cb72a6b"
+                },
+                {
+                  "id": "saa-c03.d3.3-3.item-05",
+                  "text": "ElastiCache Redis vs Memcached, caching strategies (lazy loading, write-through)",
+                  "hash": "175e79cbc9"
+                },
+                {
+                  "id": "saa-c03.d3.3-3.item-06",
+                  "text": "Redshift: distribution styles, sort keys, Redshift Spectrum, Concurrency Scaling",
+                  "hash": "ad68d5622a"
+                },
+                {
+                  "id": "saa-c03.d3.3-3.item-07",
+                  "text": "Purpose-built database selection: Neptune, Timestream, DocumentDB, Keyspaces, QLDB",
+                  "hash": "ba97a45e56"
+                },
+                {
+                  "id": "saa-c03.d3.3-3.item-08",
+                  "text": "Database caching and connection pooling (RDS Proxy)",
+                  "hash": "1f4916ad46"
+                }
+              ]
+            },
+            {
+              "id": "saa-c03.d3.3-4",
+              "number": "3.4",
+              "title": "High-performing network",
+              "implicit": false,
+              "items": [
+                {
+                  "id": "saa-c03.d3.3-4.item-01",
+                  "text": "CloudFront: origins, behaviours, cache policies, TTL, invalidations, signed URLs and cookies, OAC",
+                  "hash": "e88ce0a83e"
+                },
+                {
+                  "id": "saa-c03.d3.3-4.item-02",
+                  "text": "AWS Global Accelerator vs CloudFront — the distinction",
+                  "hash": "68a495389f"
+                },
+                {
+                  "id": "saa-c03.d3.3-4.item-03",
+                  "text": "Direct Connect (dedicated vs hosted), Direct Connect Gateway, VPN as backup",
+                  "hash": "185b04f708"
+                },
+                {
+                  "id": "saa-c03.d3.3-4.item-04",
+                  "text": "Transit Gateway for hub-and-spoke at scale",
+                  "hash": "510306b847"
+                },
+                {
+                  "id": "saa-c03.d3.3-4.item-05",
+                  "text": "PrivateLink for private service exposure",
+                  "hash": "19fbb94ecb"
+                },
+                {
+                  "id": "saa-c03.d3.3-4.item-06",
+                  "text": "Route 53 latency-based routing",
+                  "hash": "6213ade4d1"
+                },
+                {
+                  "id": "saa-c03.d3.3-4.item-07",
+                  "text": "Bandwidth and latency considerations, edge network optimisation",
+                  "hash": "a4cfb80b31"
+                }
+              ]
+            },
+            {
+              "id": "saa-c03.d3.3-5",
+              "number": "3.5",
+              "title": "High-performing data ingestion and transformation",
+              "implicit": false,
+              "items": [
+                {
+                  "id": "saa-c03.d3.3-5.item-01",
+                  "text": "Amazon Kinesis Data Streams, Data Firehose, Managed Service for Apache Flink",
+                  "hash": "866180f4b1"
+                },
+                {
+                  "id": "saa-c03.d3.3-5.item-02",
+                  "text": "Amazon MSK",
+                  "hash": "077b6b433d"
+                },
+                {
+                  "id": "saa-c03.d3.3-5.item-03",
+                  "text": "AWS Glue — ETL, crawlers, Data Catalog",
+                  "hash": "5e1bfa0e6c"
+                },
+                {
+                  "id": "saa-c03.d3.3-5.item-04",
+                  "text": "Amazon EMR",
+                  "hash": "8ac19d8b52"
+                },
+                {
+                  "id": "saa-c03.d3.3-5.item-05",
+                  "text": "Amazon Athena, AWS Lake Formation",
+                  "hash": "c2e355f48b"
+                },
+                {
+                  "id": "saa-c03.d3.3-5.item-06",
+                  "text": "Amazon OpenSearch Service",
+                  "hash": "8d77d1b08c"
+                },
+                {
+                  "id": "saa-c03.d3.3-5.item-07",
+                  "text": "Amazon QuickSight",
+                  "hash": "105150bd86"
+                },
+                {
+                  "id": "saa-c03.d3.3-5.item-08",
+                  "text": "Data lake architecture on S3",
+                  "hash": "e3cddd24e8"
+                },
+                {
+                  "id": "saa-c03.d3.3-5.item-09",
+                  "text": "Batch vs streaming ingestion patterns",
+                  "hash": "7bedd390bb"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "d4",
+          "number": 4,
+          "title": "Design Cost-Optimized Architectures",
+          "weightPercent": 20,
+          "note": null,
+          "sections": [
+            {
+              "id": "saa-c03.d4.4-1",
+              "number": "4.1",
+              "title": "Cost-optimised storage",
+              "implicit": false,
+              "items": [
+                {
+                  "id": "saa-c03.d4.4-1.item-01",
+                  "text": "S3 storage class cost comparison and lifecycle policy design",
+                  "hash": "57a1c71e37"
+                },
+                {
+                  "id": "saa-c03.d4.4-1.item-02",
+                  "text": "S3 Intelligent-Tiering vs manual lifecycle rules",
+                  "hash": "6b935d6b3e"
+                },
+                {
+                  "id": "saa-c03.d4.4-1.item-03",
+                  "text": "Glacier retrieval tiers and their costs",
+                  "hash": "904f07cd1f"
+                },
+                {
+                  "id": "saa-c03.d4.4-1.item-04",
+                  "text": "EBS snapshot management, gp3 over gp2 as a default cost win",
+                  "hash": "f89e22b21e"
+                },
+                {
+                  "id": "saa-c03.d4.4-1.item-05",
+                  "text": "Data transfer costs: same-AZ, cross-AZ, cross-Region, internet egress, CloudFront egress",
+                  "hash": "118eeb5a6c"
+                },
+                {
+                  "id": "saa-c03.d4.4-1.item-06",
+                  "text": "S3 Requester Pays",
+                  "hash": "008270f6cf"
+                }
+              ]
+            },
+            {
+              "id": "saa-c03.d4.4-2",
+              "number": "4.2",
+              "title": "Cost-optimised compute",
+              "implicit": false,
+              "items": [
+                {
+                  "id": "saa-c03.d4.4-2.item-01",
+                  "text": "Spot Instances, Spot Fleet, interruption handling",
+                  "hash": "2b5fb1f361"
+                },
+                {
+                  "id": "saa-c03.d4.4-2.item-02",
+                  "text": "Reserved Instances vs Savings Plans — which fits which workload",
+                  "hash": "8cadd946e8"
+                },
+                {
+                  "id": "saa-c03.d4.4-2.item-03",
+                  "text": "Right-sizing with Compute Optimizer",
+                  "hash": "f7dd440b04"
+                },
+                {
+                  "id": "saa-c03.d4.4-2.item-04",
+                  "text": "Serverless as a cost strategy",
+                  "hash": "d968d9c558"
+                },
+                {
+                  "id": "saa-c03.d4.4-2.item-05",
+                  "text": "Instance scheduling, scaling policies to reduce idle spend",
+                  "hash": "faf0864c39"
+                },
+                {
+                  "id": "saa-c03.d4.4-2.item-06",
+                  "text": "Graviton for price/performance",
+                  "hash": "97bad2dbdd"
+                }
+              ]
+            },
+            {
+              "id": "saa-c03.d4.4-3",
+              "number": "4.3",
+              "title": "Cost-optimised databases",
+              "implicit": false,
+              "items": [
+                {
+                  "id": "saa-c03.d4.4-3.item-01",
+                  "text": "RDS Reserved Instances",
+                  "hash": "f210291154"
+                },
+                {
+                  "id": "saa-c03.d4.4-3.item-02",
+                  "text": "Aurora Serverless for variable workloads",
+                  "hash": "8d7881c545"
+                },
+                {
+                  "id": "saa-c03.d4.4-3.item-03",
+                  "text": "DynamoDB on-demand vs provisioned — the cost crossover point",
+                  "hash": "f3d9f95a5f"
+                },
+                {
+                  "id": "saa-c03.d4.4-3.item-04",
+                  "text": "Read replica cost implications",
+                  "hash": "4524266adc"
+                },
+                {
+                  "id": "saa-c03.d4.4-3.item-05",
+                  "text": "Database right-sizing and storage auto scaling",
+                  "hash": "e794e73aef"
+                }
+              ]
+            },
+            {
+              "id": "saa-c03.d4.4-4",
+              "number": "4.4",
+              "title": "Cost-optimised network",
+              "implicit": false,
+              "items": [
+                {
+                  "id": "saa-c03.d4.4-4.item-01",
+                  "text": "NAT gateway cost — and when VPC endpoints are cheaper",
+                  "hash": "9fdac0d035"
+                },
+                {
+                  "id": "saa-c03.d4.4-4.item-02",
+                  "text": "CloudFront for reducing origin egress cost",
+                  "hash": "f742786a9c"
+                },
+                {
+                  "id": "saa-c03.d4.4-4.item-03",
+                  "text": "Direct Connect vs VPN cost profiles",
+                  "hash": "9a7b64d34c"
+                },
+                {
+                  "id": "saa-c03.d4.4-4.item-04",
+                  "text": "Load balancer type cost differences",
+                  "hash": "8d48aeac12"
+                },
+                {
+                  "id": "saa-c03.d4.4-4.item-05",
+                  "text": "Cost tools in architecture decisions: Cost Explorer, Budgets, Cost and Usage Report, cost allocation tags, AWS Compute Optimizer, Trusted Advisor cost checks",
+                  "hash": "074cacc431"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "itemCount": 116
+    },
+    {
+      "id": "dva-c02",
+      "code": "DVA-C02",
+      "name": "Developer Associate",
+      "order": 4,
+      "intro": [],
+      "domainSummary": "Development with AWS Services 32% · Security 26% · Deployment 24% · Troubleshooting & Optimization 18%",
+      "examFacts": {
+        "level": "Associate",
+        "questions": 65,
+        "scoredQuestions": 50,
+        "timeMinutes": 130,
+        "passScore": 720,
+        "passScoreMax": 1000,
+        "price": 150,
+        "priceLabel": "$150",
+        "retakeWaitDays": 14,
+        "validityYears": 3
+      },
+      "reviseFrom": [
+        "**Revise from SAA-C03 before starting:** IAM policy structure and evaluation logic · STS and roles · KMS, Secrets Manager, Parameter Store · Cognito user pools vs identity pools · S3 features (versioning, presigned URLs, encryption options) · DynamoDB (partition keys, GSI/LSI, capacity modes, DAX, Streams) · Lambda (concurrency, cold starts, layers) · SQS/SNS/EventBridge/Step Functions · API Gateway · CloudWatch, CloudTrail, X-Ray · ECS/ECR/Fargate · CloudFormation. SAA covered these architecturally — DVA covers them at the API, SDK, and error-code level.",
+        "**Also revise from AIF-C01:** Amazon Bedrock basics and Amazon Q Developer — the DVA-C02 guide now includes Amazon Q Developer and event-driven patterns."
+      ],
+      "reviseFromPanels": [
+        {
+          "title": "Revise from SAA-C03 before starting",
+          "topics": [
+            "IAM policy structure and evaluation logic",
+            "STS and roles",
+            "KMS, Secrets Manager, Parameter Store",
+            "Cognito user pools vs identity pools",
+            "S3 features (versioning, presigned URLs, encryption options)",
+            "DynamoDB (partition keys, GSI/LSI, capacity modes, DAX, Streams)",
+            "Lambda (concurrency, cold starts, layers)",
+            "SQS/SNS/EventBridge/Step Functions",
+            "API Gateway",
+            "CloudWatch, CloudTrail, X-Ray",
+            "ECS/ECR/Fargate",
+            "CloudFormation"
+          ],
+          "note": "SAA covered these architecturally — DVA covers them at the API, SDK, and error-code level."
+        },
+        {
+          "title": "Also revise from AIF-C01",
+          "topics": [
+            "Amazon Bedrock basics and Amazon Q Developer — the DVA-C02 guide now includes Amazon Q Developer and event-driven patterns."
+          ],
+          "note": null
+        }
+      ],
+      "domains": [
+        {
+          "id": "d1",
+          "number": 1,
+          "title": "Development with AWS Services",
+          "weightPercent": 32,
+          "note": null,
+          "sections": [
+            {
+              "id": "dva-c02.d1.1-1",
+              "number": "1.1",
+              "title": "Applications with event-driven and serverless architectures",
+              "implicit": false,
+              "items": [
+                {
+                  "id": "dva-c02.d1.1-1.item-01",
+                  "text": "Lambda: handler structure, event object, context object, environment variables",
+                  "hash": "08601eea19"
+                },
+                {
+                  "id": "dva-c02.d1.1-1.item-02",
+                  "text": "Lambda configuration: memory, timeout, ephemeral storage, VPC access, layers, versions and aliases",
+                  "hash": "821adc17f5"
+                },
+                {
+                  "id": "dva-c02.d1.1-1.item-03",
+                  "text": "Lambda concurrency: reserved vs provisioned, throttling behaviour, scaling limits",
+                  "hash": "0e9f516280"
+                },
+                {
+                  "id": "dva-c02.d1.1-1.item-04",
+                  "text": "Lambda event source mappings: SQS, Kinesis, DynamoDB Streams — batch size, batch window, error handling",
+                  "hash": "5d50f187df"
+                },
+                {
+                  "id": "dva-c02.d1.1-1.item-05",
+                  "text": "Lambda destinations and DLQs",
+                  "hash": "dc2f90e508"
+                },
+                {
+                  "id": "dva-c02.d1.1-1.item-06",
+                  "text": "Stateful vs stateless design, idempotency",
+                  "hash": "aaa3ba5318"
+                },
+                {
+                  "id": "dva-c02.d1.1-1.item-07",
+                  "text": "SQS message lifecycle: visibility timeout, long vs short polling, message retention, DLQ redrive",
+                  "hash": "2f1ecfae06"
+                },
+                {
+                  "id": "dva-c02.d1.1-1.item-08",
+                  "text": "SQS FIFO: message group ID, deduplication ID",
+                  "hash": "ec9c917fe9"
+                },
+                {
+                  "id": "dva-c02.d1.1-1.item-09",
+                  "text": "SNS message filtering, delivery retry, FIFO topics",
+                  "hash": "0ee0896399"
+                },
+                {
+                  "id": "dva-c02.d1.1-1.item-10",
+                  "text": "EventBridge: event patterns, rules, targets, schema registry, archive and replay, EventBridge Pipes",
+                  "hash": "76513fa148"
+                },
+                {
+                  "id": "dva-c02.d1.1-1.item-11",
+                  "text": "Step Functions: state types (Task, Choice, Parallel, Map, Wait), error handling, retry/catch, Standard vs Express",
+                  "hash": "fff51c7441"
+                },
+                {
+                  "id": "dva-c02.d1.1-1.item-12",
+                  "text": "Fan-out and orchestration patterns",
+                  "hash": "94ff526b55"
+                }
+              ]
+            },
+            {
+              "id": "dva-c02.d1.1-2",
+              "number": "1.2",
+              "title": "Applications using AWS SDKs and APIs",
+              "implicit": false,
+              "items": [
+                {
+                  "id": "dva-c02.d1.1-2.item-01",
+                  "text": "AWS SDK usage patterns (boto3 or equivalent) — client creation, credential chain",
+                  "hash": "4292784fe5"
+                },
+                {
+                  "id": "dva-c02.d1.1-2.item-02",
+                  "text": "Credential precedence order: environment variables → shared config → instance profile",
+                  "hash": "7607e0cc00"
+                },
+                {
+                  "id": "dva-c02.d1.1-2.item-03",
+                  "text": "AWS CLI configuration, profiles, named credentials",
+                  "hash": "ce924817e9"
+                },
+                {
+                  "id": "dva-c02.d1.1-2.item-04",
+                  "text": "Retry behaviour: exponential backoff, jitter, SDK default retries",
+                  "hash": "8def6a9458"
+                },
+                {
+                  "id": "dva-c02.d1.1-2.item-05",
+                  "text": "Pagination in SDK calls",
+                  "hash": "11d8073c6f"
+                },
+                {
+                  "id": "dva-c02.d1.1-2.item-06",
+                  "text": "Handling API throttling and `ThrottlingException`",
+                  "hash": "0d0bf11c72"
+                },
+                {
+                  "id": "dva-c02.d1.1-2.item-07",
+                  "text": "AWS SAM (Serverless Application Model) — templates, local testing, `sam build`/`deploy`",
+                  "hash": "c38d54e5a9"
+                },
+                {
+                  "id": "dva-c02.d1.1-2.item-08",
+                  "text": "AWS CDK basics",
+                  "hash": "60213b5f7d"
+                },
+                {
+                  "id": "dva-c02.d1.1-2.item-09",
+                  "text": "Amazon Q Developer for code generation and review",
+                  "hash": "ed2325ef6c"
+                }
+              ]
+            },
+            {
+              "id": "dva-c02.d1.1-3",
+              "number": "1.3",
+              "title": "Data stores in application development",
+              "implicit": false,
+              "items": [
+                {
+                  "id": "dva-c02.d1.1-3.item-01",
+                  "text": "DynamoDB API: PutItem, GetItem, UpdateItem, Query vs Scan, BatchGetItem, BatchWriteItem, TransactWriteItems",
+                  "hash": "b759b20eab"
+                },
+                {
+                  "id": "dva-c02.d1.1-3.item-02",
+                  "text": "DynamoDB conditional writes, optimistic locking, atomic counters",
+                  "hash": "6ccb194266"
+                },
+                {
+                  "id": "dva-c02.d1.1-3.item-03",
+                  "text": "DynamoDB consistency: eventually consistent vs strongly consistent reads",
+                  "hash": "c16814d36f"
+                },
+                {
+                  "id": "dva-c02.d1.1-3.item-04",
+                  "text": "RCU/WCU calculation",
+                  "hash": "b5e1376ed5"
+                },
+                {
+                  "id": "dva-c02.d1.1-3.item-05",
+                  "text": "DynamoDB single-table design basics, key design to avoid hot partitions",
+                  "hash": "a061b52e46"
+                },
+                {
+                  "id": "dva-c02.d1.1-3.item-06",
+                  "text": "DynamoDB Streams and Lambda triggers",
+                  "hash": "cc80de1239"
+                },
+                {
+                  "id": "dva-c02.d1.1-3.item-07",
+                  "text": "S3 API: multipart upload, presigned URLs, S3 Select, event notifications",
+                  "hash": "220efae367"
+                },
+                {
+                  "id": "dva-c02.d1.1-3.item-08",
+                  "text": "S3 consistency model",
+                  "hash": "a0c4722711"
+                },
+                {
+                  "id": "dva-c02.d1.1-3.item-09",
+                  "text": "RDS Proxy for connection pooling from Lambda",
+                  "hash": "662ad6c913"
+                },
+                {
+                  "id": "dva-c02.d1.1-3.item-10",
+                  "text": "ElastiCache caching patterns in code: lazy loading, write-through, TTL strategy",
+                  "hash": "a4057fbaef"
+                },
+                {
+                  "id": "dva-c02.d1.1-3.item-11",
+                  "text": "Data lifecycle, ephemeral vs persistent storage in application context",
+                  "hash": "efcb5fa35d"
+                },
+                {
+                  "id": "dva-c02.d1.1-3.item-12",
+                  "text": "Serialization, schema evolution, data format choice",
+                  "hash": "807bf01b98"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "d2",
+          "number": 2,
+          "title": "Security",
+          "weightPercent": 26,
+          "note": "Larger than Deployment. Routinely under-studied.",
+          "sections": [
+            {
+              "id": "dva-c02.d2.2-1",
+              "number": "2.1",
+              "title": "Authentication and authorization",
+              "implicit": false,
+              "items": [
+                {
+                  "id": "dva-c02.d2.2-1.item-01",
+                  "text": "Amazon Cognito user pools (authentication) vs identity pools (authorization to AWS resources)",
+                  "hash": "00019abd54"
+                },
+                {
+                  "id": "dva-c02.d2.2-1.item-02",
+                  "text": "Cognito flows, hosted UI, tokens (ID, access, refresh), JWT validation",
+                  "hash": "b3094d6230"
+                },
+                {
+                  "id": "dva-c02.d2.2-1.item-03",
+                  "text": "IAM roles for applications, instance profiles, Lambda execution roles",
+                  "hash": "caf085b5b1"
+                },
+                {
+                  "id": "dva-c02.d2.2-1.item-04",
+                  "text": "AWS STS: AssumeRole, AssumeRoleWithWebIdentity, session duration",
+                  "hash": "ad5a5ab8bb"
+                },
+                {
+                  "id": "dva-c02.d2.2-1.item-05",
+                  "text": "Resource-based policies: S3 bucket policies, Lambda resource policies, SQS/SNS policies",
+                  "hash": "2eca24f390"
+                },
+                {
+                  "id": "dva-c02.d2.2-1.item-06",
+                  "text": "API Gateway authorizers: IAM, Lambda authorizer, Cognito authorizer",
+                  "hash": "454560557d"
+                },
+                {
+                  "id": "dva-c02.d2.2-1.item-07",
+                  "text": "API keys and usage plans",
+                  "hash": "302217fb9f"
+                },
+                {
+                  "id": "dva-c02.d2.2-1.item-08",
+                  "text": "Cross-origin resource sharing (CORS)",
+                  "hash": "23d22eb084"
+                },
+                {
+                  "id": "dva-c02.d2.2-1.item-09",
+                  "text": "Least privilege for application roles",
+                  "hash": "91b52fe6dc"
+                }
+              ]
+            },
+            {
+              "id": "dva-c02.d2.2-2",
+              "number": "2.2",
+              "title": "Encryption in application code",
+              "implicit": false,
+              "items": [
+                {
+                  "id": "dva-c02.d2.2-2.item-01",
+                  "text": "KMS in code: Encrypt, Decrypt, GenerateDataKey, envelope encryption",
+                  "hash": "f990a4ecce"
+                },
+                {
+                  "id": "dva-c02.d2.2-2.item-02",
+                  "text": "Client-side vs server-side encryption",
+                  "hash": "42d20cb617"
+                },
+                {
+                  "id": "dva-c02.d2.2-2.item-03",
+                  "text": "S3 encryption options in SDK calls",
+                  "hash": "15e48afef5"
+                },
+                {
+                  "id": "dva-c02.d2.2-2.item-04",
+                  "text": "Certificate management with ACM",
+                  "hash": "abf24a5440"
+                },
+                {
+                  "id": "dva-c02.d2.2-2.item-05",
+                  "text": "Key rotation and key policies from a developer's view",
+                  "hash": "15a2e6e780"
+                }
+              ]
+            },
+            {
+              "id": "dva-c02.d2.2-3",
+              "number": "2.3",
+              "title": "Sensitive data management",
+              "implicit": false,
+              "items": [
+                {
+                  "id": "dva-c02.d2.2-3.item-01",
+                  "text": "Secrets Manager: retrieval in code, automatic rotation, cross-account access, caching",
+                  "hash": "3ad6c6fe44"
+                },
+                {
+                  "id": "dva-c02.d2.2-3.item-02",
+                  "text": "Systems Manager Parameter Store: String, StringList, SecureString, standard vs advanced tiers",
+                  "hash": "d7af7c4fec"
+                },
+                {
+                  "id": "dva-c02.d2.2-3.item-03",
+                  "text": "Secrets Manager vs Parameter Store — cost, rotation, size, the decision criteria",
+                  "hash": "8d3591e964"
+                },
+                {
+                  "id": "dva-c02.d2.2-3.item-04",
+                  "text": "Environment variable encryption in Lambda",
+                  "hash": "c3eda4f249"
+                },
+                {
+                  "id": "dva-c02.d2.2-3.item-05",
+                  "text": "Avoiding credentials in code and logs, sanitising logs",
+                  "hash": "560c31c1cf"
+                },
+                {
+                  "id": "dva-c02.d2.2-3.item-06",
+                  "text": "Data classification and PII handling",
+                  "hash": "24f7c15cc0"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "d3",
+          "number": 3,
+          "title": "Deployment",
+          "weightPercent": 24,
+          "note": null,
+          "sections": [
+            {
+              "id": "dva-c02.d3.3-1",
+              "number": "3.1",
+              "title": "Preparing artifacts",
+              "implicit": false,
+              "items": [
+                {
+                  "id": "dva-c02.d3.3-1.item-01",
+                  "text": "Application configuration and secrets separated from code",
+                  "hash": "66de49a3f9"
+                },
+                {
+                  "id": "dva-c02.d3.3-1.item-02",
+                  "text": "Lambda deployment packages, container images for Lambda",
+                  "hash": "572284966d"
+                },
+                {
+                  "id": "dva-c02.d3.3-1.item-03",
+                  "text": "Docker images, Dockerfile basics, Amazon ECR (push, pull, lifecycle policies, image scanning)",
+                  "hash": "d77e138c85"
+                },
+                {
+                  "id": "dva-c02.d3.3-1.item-04",
+                  "text": "Dependency management, packaging for target runtime",
+                  "hash": "cbca67d640"
+                }
+              ]
+            },
+            {
+              "id": "dva-c02.d3.3-2",
+              "number": "3.2",
+              "title": "Testing in development environments",
+              "implicit": false,
+              "items": [
+                {
+                  "id": "dva-c02.d3.3-2.item-01",
+                  "text": "AWS SAM local invocation and local testing",
+                  "hash": "dd748da433"
+                },
+                {
+                  "id": "dva-c02.d3.3-2.item-02",
+                  "text": "Mocking AWS services",
+                  "hash": "96e97262a3"
+                },
+                {
+                  "id": "dva-c02.d3.3-2.item-03",
+                  "text": "API Gateway stages and stage variables",
+                  "hash": "22eacfa113"
+                },
+                {
+                  "id": "dva-c02.d3.3-2.item-04",
+                  "text": "Lambda versions, aliases, and weighted alias routing",
+                  "hash": "e1ab2e0d5d"
+                },
+                {
+                  "id": "dva-c02.d3.3-2.item-05",
+                  "text": "Integration testing against a dev account",
+                  "hash": "bb47c8e755"
+                }
+              ]
+            },
+            {
+              "id": "dva-c02.d3.3-3",
+              "number": "3.3",
+              "title": "Automating deployment testing",
+              "implicit": false,
+              "items": [
+                {
+                  "id": "dva-c02.d3.3-3.item-01",
+                  "text": "AWS CodeBuild: buildspec.yml structure, phases, artifacts, environment variables",
+                  "hash": "9235ad8998"
+                },
+                {
+                  "id": "dva-c02.d3.3-3.item-02",
+                  "text": "AWS CodePipeline: stages, actions, source/build/deploy, approval actions",
+                  "hash": "0a69609c9a"
+                },
+                {
+                  "id": "dva-c02.d3.3-3.item-03",
+                  "text": "AWS CodeDeploy: appspec.yml, deployment groups, lifecycle hooks",
+                  "hash": "e95534af3b"
+                },
+                {
+                  "id": "dva-c02.d3.3-3.item-04",
+                  "text": "AWS CodeArtifact",
+                  "hash": "c1acc9bc17"
+                },
+                {
+                  "id": "dva-c02.d3.3-3.item-05",
+                  "text": "Unit vs integration vs load testing in a pipeline",
+                  "hash": "7a0bca5198"
+                }
+              ]
+            },
+            {
+              "id": "dva-c02.d3.3-4",
+              "number": "3.4",
+              "title": "Deploying code",
+              "implicit": false,
+              "items": [
+                {
+                  "id": "dva-c02.d3.3-4.item-01",
+                  "text": "Deployment strategies: in-place, rolling, rolling with additional batch, blue/green, canary, linear, all-at-once — and their trade-offs",
+                  "hash": "bfda21e759"
+                },
+                {
+                  "id": "dva-c02.d3.3-4.item-02",
+                  "text": "CodeDeploy deployment configurations for Lambda, ECS, EC2/on-premises",
+                  "hash": "08f27dae44"
+                },
+                {
+                  "id": "dva-c02.d3.3-4.item-03",
+                  "text": "Rollback and automatic rollback triggers",
+                  "hash": "5e29bb641e"
+                },
+                {
+                  "id": "dva-c02.d3.3-4.item-04",
+                  "text": "CloudFormation: template anatomy, parameters, mappings, conditions, outputs, intrinsic functions (Ref, GetAtt, Sub, Join), change sets, stack policies, nested stacks, drift detection",
+                  "hash": "c469d229a1"
+                },
+                {
+                  "id": "dva-c02.d3.3-4.item-05",
+                  "text": "CloudFormation deletion policy and stack update behaviour",
+                  "hash": "78e0ecf385"
+                },
+                {
+                  "id": "dva-c02.d3.3-4.item-06",
+                  "text": "AWS SAM as a CloudFormation transform",
+                  "hash": "00f1cee164"
+                },
+                {
+                  "id": "dva-c02.d3.3-4.item-07",
+                  "text": "Elastic Beanstalk deployment policies and environment types",
+                  "hash": "1ab97bb6be"
+                },
+                {
+                  "id": "dva-c02.d3.3-4.item-08",
+                  "text": "AWS Amplify for frontend deployment",
+                  "hash": "b6f00381f1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "d4",
+          "number": 4,
+          "title": "Troubleshooting and Optimization",
+          "weightPercent": 18,
+          "note": null,
+          "sections": [
+            {
+              "id": "dva-c02.d4.4-1",
+              "number": "4.1",
+              "title": "Root cause analysis",
+              "implicit": false,
+              "items": [
+                {
+                  "id": "dva-c02.d4.4-1.item-01",
+                  "text": "CloudWatch Logs: log groups, streams, retention, Logs Insights queries, metric filters",
+                  "hash": "e4ed67423f"
+                },
+                {
+                  "id": "dva-c02.d4.4-1.item-02",
+                  "text": "CloudWatch metrics, custom metrics, embedded metric format",
+                  "hash": "82d80160b8"
+                },
+                {
+                  "id": "dva-c02.d4.4-1.item-03",
+                  "text": "CloudWatch alarms, composite alarms",
+                  "hash": "5c63f9bfc9"
+                },
+                {
+                  "id": "dva-c02.d4.4-1.item-04",
+                  "text": "AWS X-Ray: traces, segments, subsegments, annotations vs metadata, service map, sampling rules",
+                  "hash": "490e015c62"
+                },
+                {
+                  "id": "dva-c02.d4.4-1.item-05",
+                  "text": "Structured logging and correlation IDs",
+                  "hash": "f0433be365"
+                },
+                {
+                  "id": "dva-c02.d4.4-1.item-06",
+                  "text": "Common AWS error codes and HTTP status codes — 4xx vs 5xx, `AccessDenied`, `ThrottlingException`, `ProvisionedThroughputExceededException`, `ConditionalCheckFailedException`",
+                  "hash": "d003389d77"
+                },
+                {
+                  "id": "dva-c02.d4.4-1.item-07",
+                  "text": "Lambda-specific failures: timeout, out of memory, permission errors, VPC ENI exhaustion",
+                  "hash": "7a7003ee27"
+                },
+                {
+                  "id": "dva-c02.d4.4-1.item-08",
+                  "text": "API Gateway errors: 429, 502, 504, integration timeouts",
+                  "hash": "7f75bc071c"
+                }
+              ]
+            },
+            {
+              "id": "dva-c02.d4.4-2",
+              "number": "4.2",
+              "title": "Instrumentation for observability",
+              "implicit": false,
+              "items": [
+                {
+                  "id": "dva-c02.d4.4-2.item-01",
+                  "text": "Instrumenting code with X-Ray SDK",
+                  "hash": "c69a1609f1"
+                },
+                {
+                  "id": "dva-c02.d4.4-2.item-02",
+                  "text": "Distributed tracing across services",
+                  "hash": "55a69d34c0"
+                },
+                {
+                  "id": "dva-c02.d4.4-2.item-03",
+                  "text": "CloudWatch Application Insights, CloudWatch Synthetics canaries",
+                  "hash": "058d4f554c"
+                },
+                {
+                  "id": "dva-c02.d4.4-2.item-04",
+                  "text": "AWS Health Dashboard",
+                  "hash": "aa1ba4a95c"
+                },
+                {
+                  "id": "dva-c02.d4.4-2.item-05",
+                  "text": "Alerting design — actionable alarms vs noise",
+                  "hash": "1d5225af2f"
+                }
+              ]
+            },
+            {
+              "id": "dva-c02.d4.4-3",
+              "number": "4.3",
+              "title": "Optimizing applications",
+              "implicit": false,
+              "items": [
+                {
+                  "id": "dva-c02.d4.4-3.item-01",
+                  "text": "Caching at every layer: CloudFront, API Gateway caching, ElastiCache, DAX",
+                  "hash": "0f4be9ad18"
+                },
+                {
+                  "id": "dva-c02.d4.4-3.item-02",
+                  "text": "Reducing Lambda cold starts, right-sizing Lambda memory",
+                  "hash": "1abefc5568"
+                },
+                {
+                  "id": "dva-c02.d4.4-3.item-03",
+                  "text": "Connection reuse and SDK client reuse outside the handler",
+                  "hash": "fc6a362bca"
+                },
+                {
+                  "id": "dva-c02.d4.4-3.item-04",
+                  "text": "Query optimisation, avoiding Scan in DynamoDB",
+                  "hash": "e01abf3e0d"
+                },
+                {
+                  "id": "dva-c02.d4.4-3.item-05",
+                  "text": "Concurrency tuning and backpressure",
+                  "hash": "fcbf0093f8"
+                },
+                {
+                  "id": "dva-c02.d4.4-3.item-06",
+                  "text": "Cost optimisation in application design",
+                  "hash": "3ac6ef6811"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "itemCount": 94
+    }
+  ],
+  "postExamChecklist": {
+    "title": "Post-exam checklist (repeat per certification)",
+    "items": [
+      {
+        "id": "post-exam.item-01",
+        "text": "Score report downloaded (SOP requires this as evidence)",
+        "hash": "03cd2dfa4c"
+      },
+      {
+        "id": "post-exam.item-02",
+        "text": "Digital badge claimed on Credly",
+        "hash": "88ba2ddae9"
+      },
+      {
+        "id": "post-exam.item-03",
+        "text": "Certificate PDF downloaded",
+        "hash": "67b7af9c17"
+      },
+      {
+        "id": "post-exam.item-04",
+        "text": "For SAA specifically: registration proof + score report + digital badge submitted to the faculty coordinator",
+        "hash": "02609b96e6"
+      },
+      {
+        "id": "post-exam.item-05",
+        "text": "50% discount voucher for the next exam noted (issued on passing any AWS cert)",
+        "hash": "73c1104e05"
+      }
+    ]
+  },
+  "resources": [
+    "AWS Skill Builder — official learning paths, plus a free exam prep course with practice questions per certification",
+    "AWS Academy LMS — required for the course regardless",
+    "Official exam guides at `docs.aws.amazon.com/aws-certification/` — the authoritative source for everything above",
+    "Service FAQ pages — written by the same teams that write exam questions; read them for your top 15 services",
+    "Practice exams — aim for consistent 80%+ with no domain below 70% before sitting"
+  ],
+  "totals": {
+    "items": 400,
+    "certifications": 4
+  }
+}

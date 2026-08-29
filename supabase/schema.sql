@@ -54,3 +54,19 @@ create policy "read own settings"   on public.user_settings for select using (au
 create policy "insert own settings" on public.user_settings for insert with check (auth.uid() = user_id);
 create policy "update own settings" on public.user_settings for update using (auth.uid() = user_id) with check (auth.uid() = user_id);
 create policy "delete own settings" on public.user_settings for delete using (auth.uid() = user_id);
+
+-- --------------------------------------------------------------- grants ----
+-- Row Level Security decides WHICH ROWS a role may touch, but Postgres still
+-- checks table-level privileges first. Newer Supabase projects no longer hand
+-- out blanket default grants on `public`, so without these every query from a
+-- signed-in user fails with "permission denied for table …" (SQLSTATE 42501)
+-- even though the policies above are correct.
+--
+-- Only `authenticated` is granted anything. `anon` — a visitor who has not
+-- signed in — is deliberately given no access to either table at all.
+
+grant select, insert, update, delete on public.progress      to authenticated;
+grant select, insert, update, delete on public.user_settings to authenticated;
+
+revoke all on public.progress      from anon;
+revoke all on public.user_settings from anon;

@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono, Newsreader } from "next/font/google";
+import { ServiceWorker } from "@/components/ServiceWorker";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { THEME_KEY } from "@/lib/store";
@@ -18,6 +19,20 @@ const serif = Newsreader({
 export const metadata: Metadata = {
   title: "AWS Certification Tracker",
   description: "Study progress across CLF-C02, AIF-C01, SAA-C03 and DVA-C02.",
+  applicationName: "AWS Certs",
+  manifest: "/manifest.webmanifest",
+  appleWebApp: {
+    capable: true,
+    title: "AWS Certs",
+    statusBarStyle: "default",
+  },
+  icons: {
+    icon: [
+      { url: "/icons/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icons/icon-512.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: [{ url: "/icons/apple-touch-icon.png", sizes: "180x180" }],
+  },
 };
 
 export const viewport: Viewport = {
@@ -25,7 +40,7 @@ export const viewport: Viewport = {
   initialScale: 1,
   viewportFit: "cover",
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#fbfbfa" },
+    { media: "(prefers-color-scheme: light)", color: "#f6f2ea" },
     { media: "(prefers-color-scheme: dark)", color: "#121210" },
   ],
 };
@@ -56,6 +71,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         >
           Skip to content
         </a>
+        <ServiceWorker />
         <SiteHeader />
         <main id="main" className="flex-1">
           {children}

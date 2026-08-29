@@ -1,0 +1,35 @@
+{
+  "name": "AWS Certification Tracker",
+  "short_name": "AWS Certs",
+  "description": "Study progress across CLF-C02, AIF-C01, SAA-C03 and DVA-C02.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#f6f2ea",
+  "theme_color": "#f6f2ea",
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    { "name": "Weak spots", "url": "/weak-spots" },
+    { "name": "SAA-C03", "url": "/cert/saa-c03" }
+  ]
+}

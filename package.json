@@ -2,8 +2,11 @@
   "name": "aws-cert-tracker",
   "version": "1.0.0",
   "private": true,
+  "engines": {
+    "node": ">=22.6.0"
+  },
   "scripts": {
-    "parse": "tsx scripts/parse-roadmap.ts",
+    "parse": "node --experimental-strip-types scripts/parse-roadmap.ts",
     "dev": "next dev",
     "build": "npm run parse && next build",
     "start": "next start"
@@ -19,7 +22,6 @@
     "@types/react": "^19.1.9",
     "@types/react-dom": "^19.1.7",
     "tailwindcss": "^4.1.13",
-    "tsx": "^4.20.3",
     "typescript": "^5.8.3"
   }
 }

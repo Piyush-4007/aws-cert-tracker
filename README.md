@@ -10,6 +10,9 @@ item counts — nothing is hardcoded.
 
 ## Setup
 
+Requires **Node 22.6 or newer** — the parser is a TypeScript file run directly through Node's
+type stripping, so there is no build-tool dependency and nothing with a native binary to install.
+
 ```bash
 npm install
 ```
@@ -33,6 +36,7 @@ Then open <http://localhost:3000>.
 
 The app is a static export (`output: "export"` in `next.config.ts`), so no Vercel settings need
 changing — the build command in `package.json` re-runs the parser and Vercel picks up `out/`.
+`engines.node` pins the build to a Node version that can run the parser.
 
 First deployment:
 

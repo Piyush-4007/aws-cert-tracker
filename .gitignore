@@ -9,6 +9,6 @@ next-env.d.ts
 .vercel
 .env*
 
-# Guard: third-party character art dropped in for reference must never be
-# committed to a public repo, deliberately or by an `add -A`.
-public/icons/squirtle.png
+# Guard: third-party character art kept for reference must never be committed to
+# a public repo, nor sit in public/ where the static export would publish it.
+squirtle*

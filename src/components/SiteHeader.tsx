@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { AccountMenu } from "./AccountMenu";
 import { ThemeToggle } from "./ThemeToggle";
 import { VOUCHER_EXPIRY, allItemIds } from "@/lib/roadmap";
 import { daysBetween, parseDay, useToday } from "@/lib/dates";
@@ -60,6 +61,7 @@ export function SiteHeader() {
           </span>
         </div>
 
+        <AccountMenu />
         <ThemeToggle />
       </div>
     </header>

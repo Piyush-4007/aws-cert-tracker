@@ -26,6 +26,16 @@ export const emptyState: ProgressState = {
   savedAt: null,
 };
 
+/**
+ * What a mutation changed, so the sync layer can push a minimal diff instead of
+ * rewriting every row. `replace` means the whole state was swapped (import,
+ * reset, or adopting a remote snapshot) and needs a full push.
+ */
+export type Change =
+  | { kind: "items"; checked: string[]; unchecked: string[] }
+  | { kind: "settings" }
+  | { kind: "replace" };
+
 /* ------------------------------------------------------------ reconciling */
 
 /**
@@ -76,6 +86,12 @@ export function reconcile(raw: unknown): ProgressState {
 let state: ProgressState = emptyState;
 let loaded = false;
 const listeners = new Set<() => void>();
+let onMutate: ((change: Change) => void) | null = null;
+
+/** The sync layer registers here to hear about local mutations. */
+export function setMutationListener(fn: ((change: Change) => void) | null) {
+  onMutate = fn;
+}
 
 function readStorage(): ProgressState {
   try {
@@ -134,7 +150,19 @@ export function getServerSnapshot(): ProgressState {
   return emptyState;
 }
 
-function commit(next: ProgressState) {
+function commit(next: ProgressState, change: Change | null) {
+  state = { ...next, savedAt: new Date().toISOString() };
+  writeStorage(state);
+  emit();
+  if (change && onMutate) onMutate(change);
+}
+
+/**
+ * Replaces local state with a snapshot that came from the server. Deliberately
+ * does not notify the sync layer — that would echo the same data straight back.
+ */
+export function applyRemote(next: ProgressState) {
+  ensureLoaded();
   state = { ...next, savedAt: new Date().toISOString() };
   writeStorage(state);
   emit();
@@ -145,50 +173,63 @@ function commit(next: ProgressState) {
 export function toggleItem(id: string) {
   const checked = { ...state.checked };
   const hashes = { ...state.hashes };
-  if (checked[id]) {
-    delete checked[id];
-    delete hashes[id];
-  } else {
+  const turningOn = !checked[id];
+  if (turningOn) {
     checked[id] = true;
     const h = hashById.get(id);
     if (h) hashes[id] = h;
+  } else {
+    delete checked[id];
+    delete hashes[id];
   }
-  commit({ ...state, checked, hashes });
+  commit({ ...state, checked, hashes }, {
+    kind: "items",
+    checked: turningOn ? [id] : [],
+    unchecked: turningOn ? [] : [id],
+  });
 }
 
 export function setMany(ids: string[], value: boolean) {
   const checked = { ...state.checked };
   const hashes = { ...state.hashes };
+  const touched: string[] = [];
   for (const id of ids) {
     if (value) {
+      if (!checked[id]) touched.push(id);
       checked[id] = true;
       const h = hashById.get(id);
       if (h) hashes[id] = h;
     } else {
+      if (checked[id]) touched.push(id);
       delete checked[id];
       delete hashes[id];
     }
   }
-  commit({ ...state, checked, hashes });
+  if (!touched.length) return;
+  commit({ ...state, checked, hashes }, {
+    kind: "items",
+    checked: value ? touched : [],
+    unchecked: value ? [] : touched,
+  });
 }
 
 export function setExamDate(certId: string, date: string | null) {
   const examDates = { ...state.examDates };
   if (date) examDates[certId] = date;
   else delete examDates[certId];
-  commit({ ...state, examDates });
+  commit({ ...state, examDates }, { kind: "settings" });
 }
 
 export function setSortByWeight(value: boolean) {
-  commit({ ...state, sortByWeight: value });
+  commit({ ...state, sortByWeight: value }, { kind: "settings" });
 }
 
 export function resetAll() {
-  commit({ ...emptyState });
+  commit({ ...emptyState }, { kind: "replace" });
 }
 
 export function importState(raw: unknown) {
-  commit(reconcile(raw));
+  commit(reconcile(raw), { kind: "replace" });
 }
 
 export function exportState(): ProgressState {

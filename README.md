@@ -97,7 +97,23 @@ voucher expires.
 **Weak spots** (`/weak-spots`) — every subsection across all four exams sitting below 50%, split
 into "started but behind" and "not started", heaviest domains first.
 
-**Data** (`/data`) — export progress to JSON, import it back, and reset behind a confirmation.
+**Data** (`/data`) — account and sync status, export progress to JSON, import it back, and reset
+behind a confirmation.
+
+## Accounts and sync
+
+Optional. With `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` set, the app adds
+Google sign-in and stores progress in Supabase so it follows you across devices. Without them it
+runs exactly as before, on `localStorage` alone — there is no degraded state and no error.
+
+See [ACCOUNTS-SETUP.md](ACCOUNTS-SETUP.md) for the one-time setup, and `supabase/schema.sql` for the
+two tables. Row Level Security restricts every row to its owner, enforced by Postgres rather than by
+application code.
+
+Ticking always writes to `localStorage` first and queues a background sync, so the checkbox never
+waits on the network and the page keeps working offline. The queue is persisted, so a refresh
+mid-outage doesn't drop writes. On first sign-in, progress already saved in the browser is uploaded
+into the account instead of being overwritten by it.
 
 ### Keyboard
 
@@ -117,7 +133,10 @@ scripts/parse-roadmap.ts     markdown -> JSON, with validation
 src/data/roadmap.json        generated; safe to delete and regenerate
 src/lib/roadmap.ts           lookups, ID/hash indexes
 src/lib/store.ts             localStorage store + reconciliation
+src/lib/sync.ts              Supabase auth + offline-tolerant write queue
+src/lib/supabase.ts          client, or null when no credentials are configured
 src/lib/useProgress.ts       useSyncExternalStore binding, tallies
+supabase/schema.sql          tables and row-level security policies
 src/app/                     routes
 src/components/              UI
 ```

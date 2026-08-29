@@ -1,14 +1,18 @@
 "use client";
 
 import { useRef, useState } from "react";
+import { SyncLine } from "@/components/AccountMenu";
 import { allItemIds, certifications, postExamIds, roadmap } from "@/lib/roadmap";
 import { exportState, importState, resetAll } from "@/lib/store";
+import { signInWithGoogle } from "@/lib/sync";
 import { tally, useProgress } from "@/lib/useProgress";
+import { useSync } from "@/lib/useSync";
 
 type Notice = { tone: "ok" | "bad"; text: string } | null;
 
 export default function DataPage() {
   const state = useProgress();
+  const sync = useSync();
   const [notice, setNotice] = useState<Notice>(null);
   const [confirming, setConfirming] = useState(false);
   const fileRef = useRef<HTMLInputElement>(null);
@@ -54,8 +58,11 @@ export default function DataPage() {
         <p className="meta">Backup</p>
         <h1 className="serif mt-4 text-[2rem] font-medium sm:text-[2.5rem]">Progress data</h1>
         <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-muted">
-          Everything lives in this browser&apos;s localStorage. Clearing site data wipes it, so export
-          a copy now and then — the file imports back into any browser.
+          {sync.status === "disabled"
+            ? "Everything lives in this browser's localStorage. Clearing site data wipes it, so export a copy now and then — the file imports back into any browser."
+            : sync.user
+              ? "Your progress is saved to your account, so it follows you to any device you sign in on. This browser keeps a local copy too, which is what makes ticking instant and keeps the page usable offline."
+              : "Right now progress lives only in this browser. Sign in and it will be saved to your account instead, so you can pick up where you left off on your phone or another laptop."}
         </p>
       </div>
 
@@ -70,6 +77,41 @@ export default function DataPage() {
         >
           {notice.text}
         </p>
+      ) : null}
+
+      {/* ----------------------------------------------------------- account */}
+      {sync.status !== "disabled" ? (
+        <section className="mt-10 rounded-xl border border-line bg-surface p-6 sm:p-8">
+          <div className="flex flex-wrap items-start justify-between gap-4">
+            <div className="min-w-0">
+              <h2 className="serif text-[1.15rem] font-medium">Account</h2>
+              {sync.user ? (
+                <>
+                  <p className="mt-1.5 truncate text-[14px] text-muted">
+                    Signed in as {sync.user.email ?? sync.user.name}
+                  </p>
+                  <div className="mt-2">
+                    <SyncLine status={sync.status} pending={sync.pending} error={sync.error} />
+                  </div>
+                </>
+              ) : (
+                <p className="mt-1.5 max-w-md text-[14px] leading-relaxed text-muted">
+                  Not signed in. Anything you have already ticked in this browser will be carried
+                  up to your account the first time you sign in — nothing is lost.
+                </p>
+              )}
+            </div>
+            {!sync.user ? (
+              <button
+                type="button"
+                onClick={() => void signInWithGoogle()}
+                className="rounded-md bg-ink px-4 py-2 text-[13.5px] text-canvas transition-transform active:scale-[0.98]"
+              >
+                Sign in with Google
+              </button>
+            ) : null}
+          </div>
+        </section>
       ) : null}
 
       {/* ------------------------------------------------------------ status */}

@@ -61,7 +61,6 @@ export interface Roadmap {
     intro: string[];
     scoringNote: string | null;
     verifiedNote: string | null;
-    voucherExpiry: string;
   };
   certifications: Certification[];
   postExamChecklist: { title: string; items: Item[] };

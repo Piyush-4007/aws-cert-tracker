@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { MarkdownText } from "@/components/MarkdownText";
 import { ProgressBar } from "@/components/ProgressBar";
-import { certItemIds, certifications, allItemIds, roadmap, VOUCHER_EXPIRY } from "@/lib/roadmap";
+import { certItemIds, certifications, allItemIds, roadmap } from "@/lib/roadmap";
 import { daysBetween, formatDay, parseDay, useToday } from "@/lib/dates";
 import { tally, useProgress } from "@/lib/useProgress";
 
@@ -23,10 +23,22 @@ export default function HomePage() {
     perCert.findIndex((c) => c.stats.percent < 100),
   );
 
-  const daysToExpiry = today === null ? null : daysBetween(today, parseDay(VOUCHER_EXPIRY));
   const remaining = overall.total - overall.done;
-  const perDay =
-    daysToExpiry !== null && daysToExpiry > 0 ? (remaining / daysToExpiry).toFixed(1) : null;
+
+  // The only deadline is one you set yourself. Find the soonest exam still ahead.
+  const upcoming = perCert
+    .map(({ cert, stats }) => {
+      const date = examDates[cert.id];
+      if (!date || today === null) return null;
+      const days = daysBetween(today, parseDay(date));
+      if (days < 0) return null;
+      return { cert, date, days, left: stats.total - stats.done };
+    })
+    .filter((x): x is NonNullable<typeof x> => x !== null)
+    .sort((a, b) => a.days - b.days)[0];
+
+  const pace =
+    upcoming && upcoming.days > 0 ? (upcoming.left / upcoming.days).toFixed(1) : null;
 
   return (
     <div className="mx-auto max-w-5xl px-5 pt-14 sm:px-8 sm:pt-20">
@@ -34,31 +46,39 @@ export default function HomePage() {
       <section className="rise">
         <p className="meta">Study plan · CLF → AIF → SAA → DVA</p>
         <h1 className="serif mt-4 max-w-2xl text-[2.1rem] font-medium sm:text-[2.8rem]">
-          Four AWS certifications, one deadline.
+          Four AWS certifications, one checklist.
         </h1>
         <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-muted">
-          {roadmap.totals.items} checklist items parsed straight from the roadmap. Every voucher
-          expires {formatDay(VOUCHER_EXPIRY)} — the exams have to be sat before then.
+          {roadmap.totals.items} items parsed straight from the roadmap, in the order the exams
+          build on each other. Set an exam date if you want a target to work back from, or just work
+          through it at your own pace.
         </p>
       </section>
 
-      {/* --------------------------------------------------------- countdown */}
+      {/* ------------------------------------------------------------- stats */}
       <section
         className="rise mt-12 grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-line bg-line sm:grid-cols-4"
         style={{ "--i": 1 } as React.CSSProperties}
       >
         <Stat
-          label="Days to voucher expiry"
-          value={daysToExpiry === null ? "—" : String(daysToExpiry)}
-          hint={formatDay(VOUCHER_EXPIRY)}
-          tone={daysToExpiry !== null && daysToExpiry < 60 ? "warn" : "normal"}
+          label="Overall complete"
+          value={`${overall.percent}%`}
+          hint={`${overall.done} of ${overall.total} items`}
         />
-        <Stat label="Overall complete" value={`${overall.percent}%`} hint={`${overall.done} of ${overall.total} items`} />
         <Stat label="Items remaining" value={String(remaining)} hint="across all four exams" />
         <Stat
+          label="Next exam"
+          value={upcoming ? String(upcoming.days) : "—"}
+          hint={upcoming ? `days · ${upcoming.cert.code}` : "no date set"}
+        />
+        <Stat
           label="Needed per day"
-          value={perDay ?? "—"}
-          hint={daysToExpiry !== null && daysToExpiry > 0 ? "to finish before expiry" : "deadline passed"}
+          value={pace ?? "—"}
+          hint={
+            upcoming
+              ? `to finish ${upcoming.cert.code} in time`
+              : "set an exam date to see this"
+          }
         />
       </section>
 
@@ -75,7 +95,6 @@ export default function HomePage() {
             const examDate = examDates[cert.id];
             const daysToExam =
               today !== null && examDate ? daysBetween(today, parseDay(examDate)) : null;
-            const late = examDate ? parseDay(examDate) > parseDay(VOUCHER_EXPIRY) : false;
 
             return (
               <li key={cert.id} className="rise" style={{ "--i": index + 3 } as React.CSSProperties}>
@@ -116,12 +135,11 @@ export default function HomePage() {
                       label={`${cert.code} progress`}
                     />
                     {examDate ? (
-                      <p className={`mt-3 text-[12px] ${late ? "text-warn" : "text-muted"}`}>
+                      <p className="mt-3 text-[12px] text-muted">
                         Exam {formatDay(examDate)}
                         {daysToExam !== null
                           ? ` · ${daysToExam >= 0 ? `${daysToExam} days away` : `${Math.abs(daysToExam)} days ago`}`
                           : ""}
-                        {late ? " · after voucher expiry" : ""}
                       </p>
                     ) : (
                       <p className="mt-3 text-[12px] text-faint">No exam date set</p>

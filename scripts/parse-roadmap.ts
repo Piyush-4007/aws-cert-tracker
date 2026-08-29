@@ -85,7 +85,6 @@ interface Roadmap {
     intro: string[];
     scoringNote: string | null;
     verifiedNote: string | null;
-    voucherExpiry: string;
   };
   certifications: Certification[];
   postExamChecklist: { title: string; items: Item[] };
@@ -410,7 +409,6 @@ function parse(markdown: string): Roadmap {
       intro: docIntro,
       scoringNote,
       verifiedNote,
-      voucherExpiry: "2027-01-29",
     },
     certifications,
     postExamChecklist: { title: postExamTitle, items: postExam },

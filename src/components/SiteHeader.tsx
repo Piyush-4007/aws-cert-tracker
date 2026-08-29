@@ -4,8 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AccountMenu } from "./AccountMenu";
 import { ThemeToggle } from "./ThemeToggle";
-import { VOUCHER_EXPIRY, allItemIds } from "@/lib/roadmap";
-import { daysBetween, parseDay, useToday } from "@/lib/dates";
+import { allItemIds } from "@/lib/roadmap";
 import { tally, useProgress } from "@/lib/useProgress";
 
 const NAV = [
@@ -16,10 +15,8 @@ const NAV = [
 
 export function SiteHeader() {
   const pathname = usePathname();
-  const today = useToday();
   const { checked } = useProgress();
   const overall = tally(allItemIds, checked);
-  const daysLeft = today === null ? null : daysBetween(today, parseDay(VOUCHER_EXPIRY));
 
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
@@ -51,17 +48,12 @@ export function SiteHeader() {
           </nav>
 
           <div className="ml-auto flex shrink-0 items-center gap-2 sm:ml-3">
-            <div className="hidden items-center gap-2 border-l border-line pl-3 md:flex">
-              <span className="meta" title="Overall progress across all four certifications">
-                {overall.percent}%
-              </span>
-              <span
-                className={`meta ${daysLeft !== null && daysLeft < 60 ? "text-warn" : ""}`}
-                title={`Vouchers expire ${VOUCHER_EXPIRY}`}
-              >
-                {daysLeft === null ? "—" : `${daysLeft}d left`}
-              </span>
-            </div>
+            <span
+              className="meta hidden border-l border-line pl-3 md:inline"
+              title="Overall progress across all four certifications"
+            >
+              {overall.percent}% done
+            </span>
             <AccountMenu />
             <ThemeToggle />
           </div>

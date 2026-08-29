@@ -4,6 +4,10 @@ A study tracker for four AWS certifications — CLF-C02, AIF-C01, SAA-C03 and DV
 `aws-cert-roadmap.md`. Sign in with Google and your progress follows you to any device. It installs
 to a phone home screen and keeps working with no connection.
 
+There is no fixed deadline baked in. Exam vouchers are issued on different dates for different
+people, so each person sets their own exam date per certification — or sets none and works through
+it at their own pace.
+
 **400 study items** across 4 certifications, 17 domains and 58 subsections, plus a 5-step post-exam
 checklist tracked separately per certification. Every number in the UI is computed from the parsed
 item counts — nothing is hardcoded.
@@ -110,15 +114,14 @@ weights sum to 100%.
 
 ## What's in it
 
-**Overview** (`/`) — days remaining until the 29 Jan 2027 voucher expiry, combined progress, items
-still to do and the daily rate needed to finish in time. Four certification cards in study order;
-ones later in the sequence are dimmed but still clickable.
+**Overview** (`/`) — combined progress, items still to do, and — if you have set an exam date — how
+many days until the nearest one and the daily rate needed to be ready. Four certification cards in
+study order; ones later in the sequence are dimmed but still clickable.
 
 **Certification** (`/cert/[id]`) — exam facts, the "revise from" carry-over topics as a distinct
 panel, then collapsible domains with their weight and progress. Per-subsection *All* / *None*
 controls, a filter box that highlights matches, an optional sort by domain weight (heaviest first),
-a planned exam date with an items-per-day pace signal, and a red flag if the date falls after the
-voucher expires.
+and a planned exam date with an items-per-day pace signal.
 
 **Weak spots** (`/weak-spots`) — every subsection across all four exams sitting below 50%, split
 into "started but behind" and "not started", heaviest domains first.
@@ -196,6 +199,14 @@ src/components/              UI
 Progress lives in a module-level store outside React and is written to `localStorage` on every
 change, so it survives re-renders, client-side navigation and refreshes. Changes in one tab
 propagate to others via the `storage` event.
+
+## Disclaimer
+
+A personal study tracker, put together to the best of my knowledge. The checklist is my own reading
+of the published exam guides — it is not official, not affiliated with or endorsed by Amazon Web
+Services, and it may be incomplete or out of date. AWS changes exam guides without warning, so
+always check the current official guide before booking. Nothing here is a guarantee of passing, and
+I am not responsible for how anyone uses it.
 
 ## Stack
 

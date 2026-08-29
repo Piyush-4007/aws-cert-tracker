@@ -8,8 +8,7 @@
       "SAA-C03 is the graded one for the Cloud Solutions Architect course (5 marks for attempting, 35 for passing)."
     ],
     "scoringNote": "Scoring is compensatory — you don't need to pass each domain individually, only the total. No penalty for guessing, so never leave a question blank.",
-    "verifiedNote": "Exam versions verified current as of 29 Aug 2026: CLF-C02, AIF-C01, SAA-C03, DVA-C02. Re-check the official exam guide before each attempt in case AWS ships a new version.",
-    "voucherExpiry": "2027-01-29"
+    "verifiedNote": "Exam versions verified current as of 29 Aug 2026: CLF-C02, AIF-C01, SAA-C03, DVA-C02. Re-check the official exam guide before each attempt in case AWS ships a new version."
   },
   "certifications": [
     {

@@ -1,6 +1,5 @@
 "use client";
 
-import { VOUCHER_EXPIRY } from "@/lib/roadmap";
 import { daysBetween, formatDay, parseDay, useToday } from "@/lib/dates";
 import { setExamDate } from "@/lib/store";
 import { useProgress } from "@/lib/useProgress";
@@ -18,7 +17,7 @@ export function ExamDatePanel({
   const date = examDates[cert.id] ?? "";
 
   const daysLeft = today !== null && date ? daysBetween(today, parseDay(date)) : null;
-  const tooLate = date ? parseDay(date) > parseDay(VOUCHER_EXPIRY) : false;
+  const inThePast = daysLeft !== null && daysLeft < 0;
   const pace =
     daysLeft !== null && daysLeft > 0 ? (remaining / daysLeft).toFixed(1) : null;
 
@@ -70,10 +69,9 @@ export function ExamDatePanel({
         ) : null}
       </div>
 
-      {tooLate ? (
-        <p className="mt-3 rounded-md border border-warn/30 bg-warn-soft px-3 py-2 text-[13px] text-warn">
-          {formatDay(date)} falls after the voucher expires on {formatDay(VOUCHER_EXPIRY)}. Vouchers
-          cannot be extended — move this date earlier.
+      {inThePast ? (
+        <p className="mt-3 rounded-md border border-line bg-raised px-3 py-2 text-[13px] text-muted">
+          {formatDay(date)} has passed. Update it if you have rebooked, or clear it.
         </p>
       ) : null}
     </div>

@@ -3,8 +3,6 @@ import type { Certification, Item, Roadmap, Section } from "./types";
 
 export const roadmap = data as Roadmap;
 
-export const VOUCHER_EXPIRY = roadmap.meta.voucherExpiry; // "2027-01-29"
-
 export const certifications = roadmap.certifications;
 
 export const certById = new Map(certifications.map((c) => [c.id, c]));

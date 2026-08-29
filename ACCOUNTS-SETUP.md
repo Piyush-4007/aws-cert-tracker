@@ -1,5 +1,11 @@
 # Turning on accounts
 
+> **This is done.** Accounts are live on
+> <https://aws-cert-tracker-trail-blazer1.vercel.app> — the Supabase project exists, the schema and
+> grants are applied, Google sign-in is configured and the Vercel environment variables are set.
+> Keep this file as the record of how it was set up, and as the recipe if the project is ever
+> rebuilt from scratch.
+
 The app already contains everything needed for Google sign-in and cross-device progress. It stays
 in local-only mode until two environment variables are set, so nothing breaks while this is
 half-finished.
@@ -87,11 +93,23 @@ Level Security entirely, and neither belongs anywhere near a browser app.
 
 ---
 
-## What I do once you send them
+## Wiring it to Vercel
 
 1. Set `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` in the Vercel project.
-2. Redeploy — the static build bakes the values in, so this has to happen at build time.
-3. Test the full round trip: sign in, tick something, sign in on a second browser, confirm it's there.
+2. Redeploy. The build is a static export, so these are baked in at build time — changing them
+   later has no effect until the next deploy.
+3. Test the round trip: sign in, tick something, then sign in on a second browser and confirm it
+   is there.
+
+## The one that will catch you out
+
+Row Level Security policies are not sufficient on their own. Postgres checks **table-level
+privileges** before it ever evaluates a row policy, and a Supabase project has no blanket default
+grants on `public`. Without the `grant … to authenticated` statements at the end of
+`supabase/schema.sql`, every query from a signed-in user fails with `permission denied for table
+progress` (SQLSTATE 42501) even though the policies are perfectly correct.
+
+The symptom is confusing, because signing in appears to work and only saving fails.
 
 ## Things worth knowing
 

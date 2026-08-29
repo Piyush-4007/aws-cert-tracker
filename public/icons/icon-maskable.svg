@@ -1,7 +1,22 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
   <rect width="512" height="512" fill="#2b2721"/>
-  <g transform="translate(256 256) scale(0.72) translate(-256 -256)">
-    <path d="M292 52 L150 292 L238 292 L204 460 L366 214 L272 214 Z"
-          fill="#f7c948" stroke="#2b2721" stroke-width="10" stroke-linejoin="round"/>
+  <g transform="translate(256 256) scale(0.74) translate(-256 -256) translate(20 26)">
+  <!-- back leg -->
+  <ellipse cx="150" cy="352" rx="42" ry="30" fill="#5aa8a2"/>
+  <!-- tail -->
+  <path d="M92 300 q-34 8 -40 30 q26 4 44 -8 Z" fill="#5aa8a2"/>
+  <!-- front leg -->
+  <ellipse cx="300" cy="360" rx="46" ry="32" fill="#6fc0b8"/>
+  <!-- head -->
+  <circle cx="372" cy="256" r="60" fill="#6fc0b8"/>
+  <circle cx="392" cy="242" r="10" fill="#20302f"/>
+  <path d="M366 286 q18 10 34 0" stroke="#20302f" stroke-width="7" fill="none" stroke-linecap="round"/>
+  <!-- shell -->
+  <path d="M96 330 q0 -142 132 -142 q132 0 132 142 Z" fill="#e8a33d"/>
+  <path d="M96 330 q0 -142 132 -142 q132 0 132 142 Z" fill="none" stroke="#8f5f18" stroke-width="9" stroke-linejoin="round"/>
+  <g stroke="#8f5f18" stroke-width="7" fill="none" stroke-linecap="round">
+    <path d="M228 188 v142"/>
+    <path d="M150 232 q78 26 156 0"/>
+  </g>
   </g>
 </svg>

@@ -25,20 +25,31 @@
   --serif: var(--font-newsreader), "Lyon Text", Georgia, serif;
   --mono: var(--font-geist-mono), "SF Mono", ui-monospace, monospace;
 
-  --canvas: #fbfbfa;
-  --surface: #ffffff;
-  --raised: #f7f6f3;
-  --ink: #1a1a18;
-  --muted: #6f6d68;
-  --faint: #9a978f;
-  --line: #e7e6e2;
-  --line-strong: #d7d5cf;
-  --accent: #1f6c9f;
-  --accent-soft: #e6f0f8;
-  --warn: #9f2f2d;
-  --warn-soft: #fbeceb;
-  --bar: #2f2e2a;
-  --bar-track: #e7e6e2;
+  /* Warm paper rather than screen-white. Nothing here is pure #fff, and the
+     darkest ink is a warm charcoal, so the page never glares at you. */
+  --canvas: #f6f2ea;
+  --surface: #fdfaf4;
+  --raised: #efe9dd;
+  --ink: #2b2721;
+  --muted: #6b6357;
+  --faint: #746b5c;
+  --line: #e3dccd;
+  --line-strong: #cfc5b2;
+  --accent: #2b6382;
+  --accent-soft: #e2ebf0;
+  --warn: #96392b;
+  --warn-soft: #f6e5df;
+  --bar: #4a4237;
+  --bar-track: #e3dccd;
+
+  /* Header is one row on desktop, two on phones; sticky toolbars offset by it. */
+  --header-h: 101px;
+}
+
+@media (min-width: 640px) {
+  :root {
+    --header-h: 57px;
+  }
 }
 
 .dark {
@@ -47,7 +58,7 @@
   --raised: #1f1e1c;
   --ink: #ecebe6;
   --muted: #918d85;
-  --faint: #6d6a63;
+  --faint: #817d75;
   --line: #2a2926;
   --line-strong: #3a3835;
   --accent: #7fb6de;
@@ -154,7 +165,7 @@ body {
 .check:checked {
   background: var(--ink);
   border-color: var(--ink);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23fbfbfa' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3.5 8.5l3 3 6-7'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23fdfaf4' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3.5 8.5l3 3 6-7'/%3E%3C/svg%3E");
   background-size: 13px 13px;
   background-position: center;
   background-repeat: no-repeat;

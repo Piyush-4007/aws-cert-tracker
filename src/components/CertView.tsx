@@ -200,7 +200,7 @@ export function CertView({ certId }: { certId: string }) {
       ) : null}
 
       {/* ---------------------------------------------------------- toolbar */}
-      <div className="sticky top-14 z-30 -mx-5 mt-12 border-y border-line bg-canvas/90 px-5 py-3 backdrop-blur-md sm:-mx-8 sm:px-8">
+      <div className="sticky top-[var(--header-h)] z-30 -mx-5 mt-12 border-y border-line bg-canvas/90 px-5 py-3 backdrop-blur-md sm:-mx-8 sm:px-8">
         <div className="flex flex-wrap items-center gap-x-4 gap-y-3">
           <div className="relative min-w-0 basis-full sm:basis-auto sm:flex-1">
             <input
